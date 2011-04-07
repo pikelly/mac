@@ -1,0 +1,17 @@
+<% title "Computers" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for computer in @computers %>
+    <tr>
+      <td><%=h computer.name %></td>
+      <td><%= link_to "Show", computer %></td>
+      <td><%= link_to "Edit", edit_computer_path(computer) %></td>
+      <td><%= link_to "Destroy", computer, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Computer", new_computer_path %></p>

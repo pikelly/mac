@@ -1,0 +1,16 @@
+<% title "Disk" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @disk.name %>
+</p>
+<p>
+  <strong>Speed:</strong>
+  <%=h @disk.speed %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_disk_path(@disk) %> |
+  <%= link_to "Destroy", @disk, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", disks_path %>
+</p>

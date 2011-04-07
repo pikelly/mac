@@ -1,0 +1,16 @@
+<% title "Ram" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @ram.name %>
+</p>
+<p>
+  <strong>Size:</strong>
+  <%=h @ram.size %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_ram_path(@ram) %> |
+  <%= link_to "Destroy", @ram, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", rams_path %>
+</p>

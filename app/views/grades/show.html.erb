@@ -1,0 +1,12 @@
+<% title "Grade" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @grade.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_grade_path(@grade) %> |
+  <%= link_to "Destroy", @grade, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", grades_path %>
+</p>

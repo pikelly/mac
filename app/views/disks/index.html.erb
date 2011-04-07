@@ -1,0 +1,19 @@
+<% title "Disks" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Speed</th>
+  </tr>
+  <% for disk in @disks %>
+    <tr>
+      <td><%=h disk.name %></td>
+      <td><%=h disk.speed %></td>
+      <td><%= link_to "Show", disk %></td>
+      <td><%= link_to "Edit", edit_disk_path(disk) %></td>
+      <td><%= link_to "Destroy", disk, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Disk", new_disk_path %></p>

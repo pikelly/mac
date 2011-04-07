@@ -1,0 +1,12 @@
+<% title "Computer" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @computer.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_computer_path(@computer) %> |
+  <%= link_to "Destroy", @computer, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", computers_path %>
+</p>

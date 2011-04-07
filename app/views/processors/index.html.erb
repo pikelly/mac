@@ -1,0 +1,19 @@
+<% title "Processors" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Speed</th>
+  </tr>
+  <% for processor in @processors %>
+    <tr>
+      <td><%=h processor.name %></td>
+      <td><%=h processor.speed %></td>
+      <td><%= link_to "Show", processor %></td>
+      <td><%= link_to "Edit", edit_processor_path(processor) %></td>
+      <td><%= link_to "Destroy", processor, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Processor", new_processor_path %></p>

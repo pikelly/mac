@@ -1,0 +1,16 @@
+<% title "Processor" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @processor.name %>
+</p>
+<p>
+  <strong>Speed:</strong>
+  <%=h @processor.speed %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_processor_path(@processor) %> |
+  <%= link_to "Destroy", @processor, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", processors_path %>
+</p>
