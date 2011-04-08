@@ -1,10 +1,33 @@
 <div id="mac_header">
-	<%= link_to_function "Tell us about your mac", expand("mac_expander") -%>
+	<%= link_to_function "Tell us about your mac", shuffle(:contract =>["mac_header"], :expand =>["mac_body"]) -%>
 </div>
-<div id="mac_expander" >
+<div >
   <table>
 	<tr>
-		<td>hello</td>
+		<td>
+			<table id="mac_body" style="display:none;">
+				<tr>
+					<td>
+						<%= link_to_function "Desktop", shuffle(:contract =>["mac_body"], :expand =>["desktop_body"]) -%>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<%= link_to_function "laptop", shuffle(:contract =>["mac_body"], :expand =>["laptop_body"]) -%>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= render "desktop_body" -%>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= render "laptop_body" -%>
+		</td>
 	</tr>
   </table>
 </div>
