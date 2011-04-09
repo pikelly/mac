@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :computers, :singular => {:quote => :get}
+
   map.resources :grades
 
   map.resources :rams

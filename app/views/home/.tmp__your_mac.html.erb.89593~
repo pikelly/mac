@@ -1,8 +1,0 @@
-<div id="mac-header">
-	<%= link_to_function "Describe your mac", nil, do |page| %>
-</div>
-<div id="mac-expander" style="display:none;">
-  <table>
-	
-  </table>	
-</div>
