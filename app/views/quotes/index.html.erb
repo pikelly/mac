@@ -1,0 +1,37 @@
+<% title "Quotes" %>
+
+<table>
+  <tr>
+    <th>Computer</th>
+    <th>Disk</th>
+    <th>Ram</th>
+    <th>Grade</th>
+    <th>Box</th>
+    <th>Cable</th>
+    <th>Adapter</th>
+    <th>Media</th>
+    <th>Manual</th>
+    <th>Mouse</th>
+    <th>Keyboard</th>
+  </tr>
+  <% for quote in @quotes %>
+    <tr>
+      <td><%=h quote.computer %></td>
+      <td><%=h quote.disk %></td>
+      <td><%=h quote.ram %></td>
+      <td><%=h quote.grade %></td>
+      <td><%=h quote.box %></td>
+      <td><%=h quote.cable %></td>
+      <td><%=h quote.adapter %></td>
+      <td><%=h quote.media %></td>
+      <td><%=h quote.manual %></td>
+      <td><%=h quote.mouse %></td>
+      <td><%=h quote.keyboard %></td>
+      <td><%= link_to "Show", quote %></td>
+      <td><%= link_to "Edit", edit_quote_path(quote) %></td>
+      <td><%= link_to "Destroy", quote, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Quote", new_quote_path %></p>

@@ -9,23 +9,7 @@
             <tr>
                 <td align="center">
                     <div id="resultproductlist">
-                    	<%= collection_select %>
-                        <select name="productlist" id="productlist" class="box" classname="box">
-                            <option value="0">MacBook White</option>
-                            <option value="1">MacBook Black</option>
-                            <option value="2">MacBook Unibody LED</option>
-                            <option value="3">MacBook Pro 15" Non Unibody</option>
-                            <option value="4">MacBook Pro 17" Non Unibody</option>
-                            <option value="5">MacBook Pro 13 Unibody</option>
-                            <option value="6">MacBook Pro 15" Unibody</option>
-                            <option value="7">MacBook Pro 17 Unibody</option>
-                            <option value="8">MacBook Air 13.3"</option>
-                            <option value="9">iBook G4 12</option>
-                            <option value="10">iBook G4 14</option>
-                            <option value="11">PowerBook G4 12</option>
-                            <option value="12">PowerBook G4 15</option>
-                            <option value="13">PowerBook G4 17</option>
-                        </select>
+                    	<%= collection_select :computer, :id, Computer.all, :name, :id, :class => "box", :classname => "box" %>
                     </div>
                 </td>
                 <td>
@@ -73,59 +57,24 @@
                             <tr>
                                 <td>
                                     <div id="resultprocessorspeed">
-                                        <select name="processorspeed" id="processorspeed" class="box" classname="box">
-                                            <option value="">Processor Speed</option>
-                                            <option value="463">1.83GHz Core Duo</option>
-                                            <option value="464">2.16GHz Core Duo</option>
-                                            <option value="462">2GHz Core Duo</option>
-                                            <option value="461">2.1GHz Core Duo</option>
-                                            <option value="460">2.2Ghz Core Duo</option>
-                                            <option value="459">2.23GHz Core Duo</option>
-                                            <option value="458">2.4GHz Core Duo</option>
-                                            <option value="0">None</option>
-                                        </select>
+                                    	<%= collection_select :computer, :processor, Processor.all, :name, :id, {:class => "box", :classname => "box", :prompt => "Processor Speed"} -%>
                                     </div>
                                 </td>
                                 <td>
                                     <div id="resulthddsize">
-                                        <select name="hddsize" id="hddsize" class="box" classname="box">
-                                            <option value="">HDD Size</option>
-                                            <option value="438">60GB</option>
-                                            <option value="439">80GB</option>
-                                            <option value="440">100GB</option>
-                                            <option value="437">120GB</option>
-                                            <option value="436">160GB</option>
-                                            <option value="435">250GB</option>
-                                            <option value="441">500GB</option>
-                                            <option value="0">None</option>
-                                        </select>
+                                        <%= collection_select :computer, :id, Disk.all, :name, :id, { :class => "box", :classname => "box", :prompt => "Hard Disk size"}%>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div id="resultraminstalled">
-                                        <select name="raminstalled" id="raminstalled" class="box" classname="box">
-                                            <option value="">RAM Installed</option>
-                                            <option value="423">512MB</option>
-                                            <option value="425">1GB</option>
-                                            <option value="424">2GB</option>
-                                            <option value="427">3GB</option>
-                                            <option value="426">4GB</option>
-                                            <option value="0">None</option>
-                                        </select>
+                                        <%= collection_select :computer, :id, Rams.all, :name, :id, {:prompt => "Ram installed", :class => "box", :classname => "box" }%>
                                     </div>
                                 </td>
                                 <td>
                                     <div id="resultbestdescribe">
-                                        <select name="bestdescribe" id="bestdescribe" class="box" classname="box">
-                                            <option value="">What best describes your computer's condition</option>
-                                            <option value="415">Grade A </option>
-                                            <option value="416">Grade B </option>
-                                            <option value="417">Grade C </option>
-                                            <option value="418">Grade D</option>
-                                            <option value="419">Grade E</option>
-                                        </select>
+                                        <%= collection_select :computer, :id, Grade.all, :name, :id, {:prompt => "The general condition of your computer", :class => "box", :classname => "box"}%>
                                     </div>
                                 </td>
                             </tr>

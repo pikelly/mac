@@ -1,0 +1,25 @@
+one:
+  computer: 
+  disk: 
+  ram: 
+  grade: 
+  box: false
+  cable: false
+  adapter: false
+  media: false
+  manual: false
+  mouse: false
+  keyboard: false
+
+two:
+  computer: 
+  disk: 
+  ram: 
+  grade: 
+  box: false
+  cable: false
+  adapter: false
+  media: false
+  manual: false
+  mouse: false
+  keyboard: false

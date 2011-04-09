@@ -41,4 +41,8 @@ class ComputersController < ApplicationController
     flash[:notice] = "Successfully destroyed computer."
     redirect_to computers_url
   end
+  
+  def quote
+    @computer = Computer.first
+  end
 end
