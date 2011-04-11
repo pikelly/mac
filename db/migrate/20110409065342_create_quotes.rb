@@ -1,10 +1,11 @@
 class CreateQuotes < ActiveRecord::Migration
   def self.up
     create_table :quotes do |t|
-      t.reference :computer
-      t.reference :disk
-      t.reference :ram
-      t.reference :grade
+      t.references :computer
+      t.references :disk
+      t.references :ram
+      t.references :grade
+      t.references :processor
       t.boolean :box
       t.boolean :cable
       t.boolean :adapter

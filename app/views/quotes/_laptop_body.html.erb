@@ -1,0 +1,134 @@
+<% form_for @quote do%>
+<table>
+<tr>
+<td valign="top" class="four-border">
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td class="productimagetext" colspan="2">
+                    Please keep clicking until you find your <span id="producttype">Laptop</span>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <%= collection_select :quote, :id, Computer.laptops, :id, :name, {}, {:class => "box", :classname => "box"} %>
+										<%= observe_field :quote_id, :url => {:action => :computer_changed}, :with => "'id=' + value" -%>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td width="42%">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                            <td align="center" width="23%">
+                                &nbsp;
+                            </td>
+                            <td align="center" width="49%">
+                                <center>
+                                	<%= image_tag "#{@computer.name}.jpg", :id => "photo" -%>
+                                </center>
+                            </td>
+                            <td align="center" width="28%">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="computer_name" align="center" class="heading" colspan="3">
+                           	  <%= @computer.name -%>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="58%" valign="top">
+                    <table align="center" width="95%" cellspacing="2" cellpadding="2" border="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                  <%= collection_select :quote, :processor, @computer.processors, :id, :name, {:prompt => "Processor Speed"},{ :classname => "box", :class => "box"} -%>
+                                </td>
+                                <td>
+                                  <%= collection_select :quote, :disk, @computer.disks, :id, :name, {:prompt => "Hard Disk size"},{ :class => "box", :classname => "box" } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                  <%= collection_select :quote, :ram, @computer.rams, :id, :name, {:prompt => "Ram installed"},{ :class => "box", :classname => "box" } %>
+                                </td>
+                                <td>
+                                  <%= collection_select :quote, :id, Grade.all, :id, :name, {:prompt => "Its condition"}, {:class => "box", :classname => "box"} %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" style="padding-right: 20px;" colspan="2">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                        <tr>
+                                            <td align="left" width="67%">
+                                                <a class="grade-text" onclick="javascript:window.open()" href="#">
+                                                    <u>
+                                                        Click to see how to find this information
+                                                    </u>
+                                                </a>
+                                            </td>
+                                            <td align="right" width="33%">
+                                                <a class="grade-text" onclick="javascript:window.open()" href="#">
+                                                    <u>
+                                                        more about grades
+                                                    </u>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="form-text" colspan="2">
+                                    <strong>What accessories does your computer come with?</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" class="form-text">
+                                    <input type="checkbox" value="1" id="accessories" class="box1" name="accessories">Original Box 
+                                    <br>
+                                    <input type="checkbox" value="2" id="accessories" class="box1" name="accessories">Charging Cable 
+                                    <br>
+                                    <input type="checkbox" value="3" id="accessories" class="box1" name="accessories">Power Adapter
+                                    <br>
+                                    <input type="checkbox" value="4" id="accessories" class="box1" name="accessories">Original install disks
+                                    <br>
+                                </td>
+                                <td valign="top" class="form-text">
+                                    <input type="checkbox" value="5" id="accessories" class="box1" name="accessories">User Manuals
+                                    <br>
+                                    <input type="checkbox" value="6" id="accessories" class="box1" name="accessories">Mouse
+                                    <br>
+                                    <input type="checkbox" value="7" id="accessories" class="box1" name="accessories">Keyboard
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                	 <%= link_to_function image_tag("back.jpg", :size => "184x28", :border => "0"), shuffle(:contract => ["laptop_body"], :expand => "mac_body") -%>
+                                </td>
+                                <td>
+                                   <%= link_to_function image_tag("how-much-is-it-worth.jpg", :size => "184x28", :border => "0"), "doValidate1();showPrice()" -%>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</td>
+</tr>
+</table>
+<% end %>

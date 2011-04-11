@@ -6,7 +6,7 @@ class CreateDisks < ActiveRecord::Migration
       t.timestamps
     end
     
-    create_table :computers_disk, :id => false  do |t|
+    create_table :computers_disks, :id => false  do |t|
       t.references :computer
       t.references :disk
     end

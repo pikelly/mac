@@ -1,0 +1,32 @@
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tr>
+		<td>
+			<div id="mac_header" class="tab-bg" height="41">
+				<%= link_to_function "Tell us about your mac", shuffle(:expand =>["mac_body"]), {:class => "tab-bg tab-text1"} -%>
+			</div>
+			<div id="mac_body" style="display:none;">
+			  <div>
+			  	&nbsp;
+			  </div>
+			  <div>
+			    <%= link_to_function image_tag("desktop.jpg", :border => 0, :width => 184), shuffle(:contract =>["mac_body"], :expand =>["desktop_body"]) -%>
+			  </div>
+        <div>
+          &nbsp;
+        </div>
+				<div>
+			    <%= link_to_function image_tag("laptop.jpg", :border => 0, :width => 184), shuffle(:contract =>["mac_body"], :expand =>["laptop_body"]) -%>
+				</div>		
+        <div>
+          &nbsp;
+        </div>
+			</div>
+			<div id="desktop_body" style="display:none">
+			  <%= render "desktop_body" -%>
+			</div>
+			<div id="laptop_body" style="display:none">
+			  <%= render "laptop_body" -%>	
+			</div>	
+    </td>
+  </tr>
+</table>

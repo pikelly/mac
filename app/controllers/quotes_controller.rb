@@ -8,7 +8,8 @@ class QuotesController < ApplicationController
   end
 
   def new
-    @quote = Quote.new
+    @computer = Computer.first
+    @quote = Quote.new :computer => @computer 
   end
 
   def create
@@ -40,5 +41,9 @@ class QuotesController < ApplicationController
     @quote.destroy
     flash[:notice] = "Successfully destroyed quote."
     redirect_to quotes_url
+  end
+  
+  def computer_changed
+    @computer = Computer.find params[:id]
   end
 end

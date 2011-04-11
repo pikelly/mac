@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :quotes
+  map.resources :quotes, :collection => {:computer_changed => :get}
 
-  map.resources :computers, :collection => {:quote => :get}
+  map.resources :computers
 
   map.resources :grades
 

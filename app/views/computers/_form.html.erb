@@ -4,5 +4,14 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
+	<p>
+		<%= edit_habtm @computer, Processor %>
+  </p>
+  <p>
+    <%= edit_habtm @computer, Disk %>
+  </p>
+  <p>
+    <%= edit_habtm @computer, Ram %>
+  </p>
   <p><%= f.submit %></p>
 <% end %>
