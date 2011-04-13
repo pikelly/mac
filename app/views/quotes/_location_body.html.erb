@@ -1,0 +1,101 @@
+<div id="div4" style="height: auto;">
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td class="four-border">
+                    <table align="center" width="95%" cellspacing="3" cellpadding="3" border="0">
+                        <tbody>
+                            <tr>
+                                <td width="15%" class="form-text">&nbsp;</td>
+                                <td width="31%" class="form-text">&nbsp;</td>
+                                <td width="24%" class="form-text">&nbsp;</td>
+                                <td width="30%" class="form-text">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text">Full Name</td>
+                                <td class="footer-text">
+                                	<%= f.text_field :name, :tabindex => 1, :class => "box" %>
+                                </td>
+                                <td class="footer-text">Post Code</td>
+                                <td class="footer-text">
+                                  <%= f.text_field :postcode, :tabindex => 5, :class => "box "%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text">House Name/No.</td>
+                                <td class="footer-text">
+                                  <label>
+                                    <%= f.text_field :housename, :tabindex => 2, :class => "box" %>
+                                    </label>
+                                </td>
+                                <td class="footer-text">Telephone No.</td>
+                                <td class="footer-text">
+                                    <%= f.text_field :phone, :tabindex => 6, :class => "box" %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text">Road Name</td>
+                                <td class="footer-text">
+                                    <%= f.text_field :road, :tabindex => 3, :class => "box" %>
+                                </td>
+                                <td class="footer-text">Your Mac’s Serial Number</td>
+                                <td class="footer-text">
+                                    <%= f.text_field :serialno, :tabindex => 3, :class => "box" %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text">City</td>
+                                <td class="footer-text">
+                                    <%= f.text_field :city, :tabindex => 4, :class => "box" %>
+                                </td>
+                                <td class="footer-text">Email Address</td>
+                                <td class="footer-text">
+                                    <label>
+                                      <%= f.text_field :email, :tabindex => 8, :class => "box" %>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text">&nbsp;</td>
+                                <td class="footer-text">&nbsp;</td>
+                                <td class="footer-text">
+                                    <p>Tick box to confirm that you have suitable packaging for your Mac (see Terms and Conditions at bottom of page for more details)</p>
+                                </td>
+                                <td class="footer-text">
+                                    <%= f.check_box :packaged, :tabindex => 9, :class => "box1"%>
+                                    I confirm I have suitably packaged my Mac
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text">&nbsp;</td>
+                                <td class="footer-text">&nbsp;</td>
+                                <td class="footer-text">&nbsp;</td>
+                                <td class="footer-text">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text" colspan="2">
+                                	<%= link_to_function image_tag("back.jpg", :size => "184x28", :border => "0"), shuffle(:contract => ["location_body"], :expand => "worth_body")%>
+                                </td>
+                                <td align="right" class="footer-text" colspan="2">
+                                	<%= link_to_remote image_tag("continue.jpg", :size => "184x28", :border => "0"), :url => {:action => "validate_shipping"}, :with => "Form.serialize($('new_quote'))",
+                                        :success => shuffle(:contract => ["location_body"], :expand => ["payment_body"])%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text">&nbsp;</td>
+                                <td class="footer-text">&nbsp;</td>
+                                <td class="footer-text">&nbsp;</td>
+                                <td class="footer-text">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <img width="2" height="5" alt="" src="images/white.jpg">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

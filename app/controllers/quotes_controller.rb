@@ -52,15 +52,15 @@ class QuotesController < ApplicationController
     if @value = @quote.calculate
       render :update do |page|
         page.replace_html "worth_value", @value
-        page.call shuffle :contract => ["laptop_body"], :expand => ["worth_body"]
       end
-      render "calculate_succeeded"
+      return
     else
       flash[:error] = @quote.errors.full_messages
       flash.discard
-      render :update do |page|
+      render :update, :status => 400 do |page|
         @computer = @quote.computer || Computer.first
-        page.replace_html "laptop_body", render("laptop_body")
+        page.alert(@quote.errors.full_messages.join("\n"))
+        #page.replace_html "laptop_body", render("laptop_body")
       end
     end
   end
