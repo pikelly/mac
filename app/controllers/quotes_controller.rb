@@ -46,4 +46,22 @@ class QuotesController < ApplicationController
   def computer_changed
     @computer = Computer.find params[:id]
   end
+  
+  def calculate
+    @quote = Quote.new params[:quote]
+    if @value = @quote.calculate
+      render :update do |page|
+        page.replace_html "worth_value", @value
+        page.call shuffle :contract => ["laptop_body"], :expand => ["worth_body"]
+      end
+      render "calculate_succeeded"
+    else
+      flash[:error] = @quote.errors.full_messages
+      flash.discard
+      render :update do |page|
+        @computer = @quote.computer || Computer.first
+        page.replace_html "laptop_body", render("laptop_body")
+      end
+    end
+  end
 end

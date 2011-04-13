@@ -3,7 +3,8 @@ class Processor < ActiveRecord::Base
   
   has_and_belongs_to_many :computers
   has_many :quotes
-  
+  has_many :prices
+
     
   def <=> other
     self.name <=> other.name

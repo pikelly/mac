@@ -1,0 +1,28 @@
+<% form_for @price do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :computer %><br />
+    <%= f.collection_select :computer_id, Computer.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :processor %><br />
+    <%= f.collection_select :processor_id, Processor.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :disk %><br />
+    <%= f.collection_select :disk_id,     Disk.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :ram %><br />
+    <%= f.collection_select :ram_id,      Ram.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :grade %><br />
+    <%= f.collection_select :grade_id,   Grade.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

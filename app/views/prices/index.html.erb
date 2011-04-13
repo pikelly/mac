@@ -1,0 +1,25 @@
+<% title "Prices" %>
+
+<table>
+  <tr>
+    <th>Computer</th>
+    <th>Disk</th>
+    <th>Ram</th>
+    <th>Grade</th>
+    <th>Grade</th>
+  </tr>
+  <% for price in @prices %>
+    <tr>
+      <td><%=h price.computer %></td>
+      <td><%=h price.disk %></td>
+      <td><%=h price.ram %></td>
+      <td><%=h price.grade %></td>
+      <td><%=h price.value %></td>
+      <td><%= link_to "Show", price %></td>
+      <td><%= link_to "Edit", edit_price_path(price) %></td>
+      <td><%= link_to "Destroy", price, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Price", new_price_path %></p>

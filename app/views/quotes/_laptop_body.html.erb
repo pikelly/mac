@@ -1,4 +1,8 @@
-<% form_for @quote do%>
+<% remote_form_for @quote, :url => calculate_quotes_path do |f|%>
+<%- flash[:error].each do | msg| -%>
+  <%= content_tag :div, msg %>
+<%- end if flash[:error] -%>
+
 <table>
 <tr>
 <td valign="top" class="four-border">
@@ -11,8 +15,8 @@
             </tr>
             <tr>
                 <td align="center">
-                    <%= collection_select :quote, :id, Computer.laptops, :id, :name, {}, {:class => "box", :classname => "box"} %>
-										<%= observe_field :quote_id, :url => {:action => :computer_changed}, :with => "'id=' + value" -%>
+                    <%= collection_select :quote, :computer_id, Computer.laptops, :id, :name, {}, {:class => "box", :classname => "box"} %>
+										<%= observe_field :quote_computer_id, :url => {:action => :computer_changed}, :with => "'id=' + value" -%>
                 </td>
                 <td>
                     &nbsp;
@@ -46,18 +50,18 @@
                         <tbody>
                             <tr>
                                 <td>
-                                  <%= collection_select :quote, :processor, @computer.processors, :id, :name, {:prompt => "Processor Speed"},{ :classname => "box", :class => "box"} -%>
+                                  <%= collection_select :quote, :processor_id, @computer.processors, :id, :name, {:prompt => "Processor Speed"},{ :classname => "box", :class => "box"} -%>
                                 </td>
                                 <td>
-                                  <%= collection_select :quote, :disk, @computer.disks, :id, :name, {:prompt => "Hard Disk size"},{ :class => "box", :classname => "box" } %>
+                                  <%= collection_select :quote, :disk_id, @computer.disks, :id, :name, {:prompt => "Hard Disk size"},{ :class => "box", :classname => "box" } %>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                  <%= collection_select :quote, :ram, @computer.rams, :id, :name, {:prompt => "Ram installed"},{ :class => "box", :classname => "box" } %>
+                                  <%= collection_select :quote, :ram_id, @computer.rams, :id, :name, {:prompt => "Ram installed"},{ :class => "box", :classname => "box" } %>
                                 </td>
                                 <td>
-                                  <%= collection_select :quote, :id, Grade.all, :id, :name, {:prompt => "Its condition"}, {:class => "box", :classname => "box"} %>
+                                  <%= collection_select :quote, :grade_id, Grade.all, :id, :name, {:prompt => "Its condition"}, {:class => "box", :classname => "box"} %>
                                 </td>
                             </tr>
                             <tr>
@@ -89,21 +93,21 @@
                             </tr>
                             <tr>
                                 <td valign="top" class="form-text">
-                                    <input type="checkbox" value="1" id="accessories" class="box1" name="accessories">Original Box 
+                                    <%= f.check_box "box" %>Original Box 
                                     <br>
-                                    <input type="checkbox" value="2" id="accessories" class="box1" name="accessories">Charging Cable 
+                                    <%= f.check_box "cable" %>Charging Cable 
                                     <br>
-                                    <input type="checkbox" value="3" id="accessories" class="box1" name="accessories">Power Adapter
+                                    <%= f.check_box "adapter" %>Power Adapter
                                     <br>
-                                    <input type="checkbox" value="4" id="accessories" class="box1" name="accessories">Original install disks
+                                    <%= f.check_box "media" %>Original install disks
                                     <br>
                                 </td>
                                 <td valign="top" class="form-text">
-                                    <input type="checkbox" value="5" id="accessories" class="box1" name="accessories">User Manuals
+                                    <%= f.check_box "manual" %>User Manuals
                                     <br>
-                                    <input type="checkbox" value="6" id="accessories" class="box1" name="accessories">Mouse
+                                    <%= f.check_box "mouse" %>Mouse
                                     <br>
-                                    <input type="checkbox" value="7" id="accessories" class="box1" name="accessories">Keyboard
+                                    <%= f.check_box "keyboard" %>Keyboard
                                 </td>
                             </tr>
                             <tr>
@@ -119,7 +123,7 @@
                                 	 <%= link_to_function image_tag("back.jpg", :size => "184x28", :border => "0"), shuffle(:contract => ["laptop_body"], :expand => "mac_body") -%>
                                 </td>
                                 <td>
-                                   <%= link_to_function image_tag("how-much-is-it-worth.jpg", :size => "184x28", :border => "0"), "doValidate1();showPrice()" -%>
+                                   <%= link_to_remote image_tag("how-much-is-it-worth.jpg", :size => "184x28", :border => "0"), :url => {:action => "calculate"}, :with => "Form.serialize($('new_quote'))" -%>
                                 </td>
                             </tr>
                         </tbody>

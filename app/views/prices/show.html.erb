@@ -1,0 +1,29 @@
+<% title "Price" %>
+
+<p>
+  <strong>Computer:</strong>
+  <%=h @price.computer %>
+</p>
+<p>
+  <strong>Disk:</strong>
+  <%=h @price.disk %>
+</p>
+<p>
+  <strong>Ram:</strong>
+  <%=h @price.ram %>
+</p>
+<p>
+  <strong>Grade:</strong>
+  <%=h @price.grade %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%=h @price.value %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_price_path(@price) %> |
+  <%= link_to "Destroy", @price, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", prices_path %>
+</p>
