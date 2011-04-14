@@ -1,56 +1,115 @@
 <div id="div5" style="height: auto;">
-                <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                  <tbody><tr>
-                    <td class="four-border"><table align="center" width="96%" cellspacing="2" cellpadding="2" border="0">
-                      <tbody><tr>
-                        <td class="simple-text">
-              <div id="macboxyes"><p>To finish, you need to pick a time and date convenient to you in the calender below. You will also need to accept our terms and condition by checking the tickbox and then clicking "I Accept". Once you have accepted, you will receive a confirmation email with all your order's information in it. Our courier will bring a label with them unless you are instructed otherwise, so you will not need to print anything off.</p></div>
-              <div id="macboxno"><p>To finish, you need to pick a time and date convenient to you in the calendar below. You will also need to accept our terms and conditions by clicking "I Accept". Once you have accepted, you will receive a confirmation email and a second email with the tracking number of the box we will send for you to place your Mac in. This will arrive on the day you selected. All you will need to do is place your Mac inside securely, affix the enclosed return shipping label to the item and hand it to the courier.</p>
-</div>  
-            </td>
-                      </tr>
-                      <tr>
-                        <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                          <tbody><tr>
-                            <td width="29%" valign="top"><table width="100%" cellspacing="2" cellpadding="2" border="0">
-                              <tbody><tr>
-                                <td><select id="timedate" class="box" name="timedate">
-                                  <option selected="selected" value="">Select Date</option>
-                                  <option value="1302732000">14/04/2011</option><option value="1302818400">15/04/2011</option><option value="1303077600">18/04/2011</option><option value="1303164000">19/04/2011</option><option value="1303250400">20/04/2011</option><option value="1303336800">21/04/2011</option><option value="1303423200">22/04/2011</option></select></td>
-                              </tr>
-                              <tr>
-                                <td><textarea id="additionalinformation" class="box" rows="5" name="additionalinformation">Additional shipping information</textarea></td>
-                              </tr>
-
-                            </tbody></table></td>
-                            <td align="right" width="71%" valign="top">&nbsp;</td>
-                          </tr>
-                        </tbody></table></td>
-                      </tr>
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
             <tr>
-                        <td class="footer-text"> <input type="checkbox" value="Yes" id="donate" name="donate">
-                        I confirm that the information I have provided, to the best of my knowledge, is accurate and true.  </td>
-                      </tr>
-                      <tr>
-                        <td class="footer-text"><p><strong>Important Payment Information. We only issue payment by the following methods:<br>
-</strong></p><li><strong>Direct Bank Transfer - We will need your Bank Account Number and Sort Code to process this.</strong></li><strong><br>
-</strong><li><strong>Paypal Transfer - We will need the email address that you are registered to PayPal with to process this.</strong></li><strong><br>You will be contacted upon receipt of your Mac regarding your preferred payment method.</strong>                        </td>
-                      </tr>
-                      <tr>
-                        <td class="footer-text"><input type="checkbox" value="Yes" tabindex="9" code="Yes" id="iagree" class="box1" name="iagree">I agree to the 
-    <a class="footer-text" onclick="javascript:window.open(&quot;terms-condition.php&quot;,&quot;asd&quot;,&quot;scrollbars=no,width=645,height=700,scrollbars=yes&quot;)" href="#">
-            
-    <u>terms and conditions</u></a> of this contract
-</td>
-                      </tr>
-                      
-                      <tr>
-                        <td align="right" class="footer-text"><a onclick="toggleItem('4');" href="javascript:;"><img width="184" height="28" border="0" alt="" src="images/back.jpg"></a>&nbsp; &nbsp;<a onclick="doValidate3()" href="javascript:;"><img width="184" height="28" border="0" alt="" src="images/iaccept.jpg"></a></td>
-                      </tr>
-                    </tbody></table></td>
-                  </tr>
-                  <tr>
-                    <td valign="top"><img width="2" height="5" alt="" src="images/white.jpg"></td>
-                  </tr>
-                </tbody></table>
-            </div>
+                <td class="four-border">
+                    <table align="center" width="96%" cellspacing="2" cellpadding="2" border="0">
+                        <tbody>
+                            <tr>
+                                <td class="simple-text">
+                                    <div id="macboxyes">
+                                        <p>
+                                            To finish, you need to pick a time and date convenient to you in the calender below. You will also need to accept our terms and condition by checking the tickbox and then clicking "I Accept". Once you have accepted, you will receive a confirmation email with all your order's information in it. Our courier will bring a label with them unless you are instructed otherwise, so you will not need to print anything off.
+                                        </p>
+                                    </div>
+                                    <div id="macboxno">
+                                        <p>
+                                            To finish, you need to pick a time and date convenient to you in the calendar below. You will also need to accept our terms and conditions by clicking "I Accept". Once you have accepted, you will receive a confirmation email and a second email with the tracking number of the box we will send for you to place your Mac in. This will arrive on the day you selected. All you will need to do is place your Mac inside securely, affix the enclosed return shipping label to the item and hand it to the courier.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td width="29%" valign="top">
+                                                    <table width="100%" cellspacing="2" cellpadding="2" border="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <select id="timedate" class="box" name="timedate">
+                                                                        <option selected="selected" value="">Select Date</option>
+                                                                        <option value="1302732000">14/04/2011</option>
+                                                                        <option value="1302818400">15/04/2011</option>
+                                                                        <option value="1303077600">18/04/2011</option>
+                                                                        <option value="1303164000">19/04/2011</option>
+                                                                        <option value="1303250400">20/04/2011</option>
+                                                                        <option value="1303336800">21/04/2011</option>
+                                                                        <option value="1303423200">22/04/2011</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea id="additionalinformation" class="box" rows="5" name="additionalinformation">
+                                                                        Additional shipping information
+                                                                    </textarea>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td align="right" width="71%" valign="top">
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text">
+                                    <input type="checkbox" value="Yes" id="donate" name="donate"> I confirm that the information I have provided, to the best of my knowledge, is accurate and true. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text">
+                                    <p>
+                                        <strong>Important Payment Information. We only issue payment by the following methods:
+                                            <br>
+                                        </strong>
+                                    </p>
+                                    <li>
+                                        <strong>Direct Bank Transfer - We will need your Bank Account Number and Sort Code to process this.</strong>
+                                    </li>
+                                    <strong>
+                                        <br>
+                                    </strong>
+                                    <li>
+                                        <strong>Paypal Transfer - We will need the email address that you are registered to PayPal with to process this.</strong>
+                                    </li>
+                                    <strong>
+                                        <br>
+                                        You will be contacted upon receipt of your Mac regarding your preferred payment method.
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="footer-text">
+                                    <input type="checkbox" value="Yes" tabindex="9" code="Yes" id="iagree" class="box1" name="iagree">I agree to the <a class="footer-text" onclick="javascript:window.open(&quot;terms-condition.php&quot;,&quot;asd&quot;,&quot;scrollbars=no,width=645,height=700,scrollbars=yes&quot;)" href="#">
+                                        <u>
+                                            terms and conditions
+                                        </u>
+                                    </a>
+                                    of this contract
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="footer-text">
+                                    <a onclick="toggleItem('4');" href="javascript:;"><img width="184" height="28" border="0" alt="" src="images/back.jpg"></a>&nbsp; &nbsp;<a onclick="doValidate3()" href="javascript:;"><img width="184" height="28" border="0" alt="" src="images/iaccept.jpg"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <img width="2" height="5" alt="" src="images/white.jpg">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

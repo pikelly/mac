@@ -1,4 +1,3 @@
-<% remote_form_for @quote, :url => calculate_quotes_path do |f|%>
 <%- flash[:error].each do | msg| -%>
   <%= content_tag :div, msg %>
 <%- end if flash[:error] -%>
@@ -136,4 +135,3 @@
 </td>
 </tr>
 </table>
-<% end %>

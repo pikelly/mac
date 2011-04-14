@@ -1,23 +1,29 @@
-<table  class="four-border "align="center" width="636" cellspacing="0" cellpadding="0" border="0">
-	<tr>
-		<td width="100%">
-			flogMyMac
-		</td>
-	</tr>
-	<tr>
-		<td>
-			pretty pictures
-		</td>
-	</tr>
-	<tr>
-		<td class="tab-text">
-			<%= render "your_mac" %>
-		</td>
-	</tr>
-	<tr>
-		<td class="tab-text">
-			<%= render "where_are_you" -%>
-			Where are you
-		</td>
-	</tr>
-</table>
+<% remote_form_for @quote, :url => calculate_quotes_path do |f|%>
+	<table  class="four-border "align="center" width="636" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td width="100%">
+				flogMyMac
+			</td>
+		</tr>
+		<tr>
+			<td>
+				pretty pictures
+			</td>
+		</tr>
+		<tr>
+			<td class="tab-text">
+				<%= render "your_mac", :f => f %>
+			</td>
+		</tr>
+		<tr>
+			<td class="tab-text">
+				<%= render "where_are_you", :f => f -%>
+			</td>
+		</tr>
+    <tr>
+      <td class="tab-text">
+        <%= render "payment", :f => f -%>
+      </td>
+    </tr>
+	</table>
+<% end %>

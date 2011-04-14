@@ -64,4 +64,8 @@ class QuotesController < ApplicationController
       end
     end
   end
+  def validate_shipping
+    @quote = Quote.new params[:quote]
+    head 200
+  end
 end
