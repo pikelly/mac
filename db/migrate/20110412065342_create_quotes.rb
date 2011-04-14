@@ -24,7 +24,10 @@ class CreateQuotes < ActiveRecord::Migration
       t.text :email, :limit => 128
       t.boolean :packaged
       
-      
+      t.datetime :collection_date
+      t.string :comment, :limit => 1024
+      t.boolean :confirmation
+      t.boolean :iagree
       t.timestamps
     end
   end

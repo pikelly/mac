@@ -9,7 +9,7 @@ class QuotesController < ApplicationController
 
   def new
     @computer = Computer.first
-    @quote = Quote.new :computer => @computer 
+    @quote = Quote.new :computer => @computer, :comment => "Additional shipping information"
   end
 
   def create

@@ -62,9 +62,10 @@
                                     <p>Tick box to confirm that you have suitable packaging for your Mac (see Terms and Conditions at bottom of page for more details)</p>
                                 </td>
                                 <td class="footer-text">
-                                    <%= f.check_box :packaged, :tabindex => 9, :class => "box1"%>
+                                    <%= f.check_box :packaged, :tabindex => 9, :class => "box1" %>
                                     I confirm I have suitably packaged my Mac
                                 </td>
+								<%= observe_field "quote_packaged", :function => toggle_macbox %>
                             </tr>
                             <tr>
                                 <td class="footer-text">&nbsp;</td>

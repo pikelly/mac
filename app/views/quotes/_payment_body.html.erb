@@ -7,7 +7,7 @@
                         <tbody>
                             <tr>
                                 <td class="simple-text">
-                                    <div id="macboxyes">
+                                    <div id="macboxyes" style="display:none;">
                                         <p>
                                             To finish, you need to pick a time and date convenient to you in the calender below. You will also need to accept our terms and condition by checking the tickbox and then clicking "I Accept". Once you have accepted, you will receive a confirmation email with all your order's information in it. Our courier will bring a label with them unless you are instructed otherwise, so you will not need to print anything off.
                                         </p>
@@ -29,6 +29,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td>
+                                                                	<%= f.date_select :collection_date, :start_year => Time.now.year , :end_year => Time.now.year + 1 %>
                                                                     <select id="timedate" class="box" name="timedate">
                                                                         <option selected="selected" value="">Select Date</option>
                                                                         <option value="1302732000">14/04/2011</option>
@@ -43,9 +44,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <textarea id="additionalinformation" class="box" rows="5" name="additionalinformation">
-                                                                        Additional shipping information
-                                                                    </textarea>
+                                                                	<%= f.text_area :comment, :class => "box", :rows => 5 %>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -61,7 +60,7 @@
                             </tr>
                             <tr>
                                 <td class="footer-text">
-                                    <input type="checkbox" value="Yes" id="donate" name="donate"> I confirm that the information I have provided, to the best of my knowledge, is accurate and true. 
+									<%= f.check_box :confirmation %>I confirm that the information I have provided, to the best of my knowledge, is accurate and true. 
                                 </td>
                             </tr>
                             <tr>
@@ -88,17 +87,14 @@
                             </tr>
                             <tr>
                                 <td class="footer-text">
-                                    <input type="checkbox" value="Yes" tabindex="9" code="Yes" id="iagree" class="box1" name="iagree">I agree to the <a class="footer-text" onclick="javascript:window.open(&quot;terms-condition.php&quot;,&quot;asd&quot;,&quot;scrollbars=no,width=645,height=700,scrollbars=yes&quot;)" href="#">
-                                        <u>
-                                            terms and conditions
-                                        </u>
-                                    </a>
+                                	<%= f.check_box :iagree, :tabindex => 9, :class => "box1" %>
+                                    I agree to the <%= link_to_function "terms and conditions", terms_and_conditions, {:style => "underline"} %>
                                     of this contract
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right" class="footer-text">
-                                    <a onclick="toggleItem('4');" href="javascript:;"><img width="184" height="28" border="0" alt="" src="images/back.jpg"></a>&nbsp; &nbsp;<a onclick="doValidate3()" href="javascript:;"><img width="184" height="28" border="0" alt="" src="images/iaccept.jpg"></a>
+									<%= link_to_function image_tag("back.jpg", :size => "184x28", :border => "0"), shuffle(:contract => ["payment_body"], :expand => "location_body")%>
                                 </td>
                             </tr>
                         </tbody>
