@@ -14,6 +14,6 @@ class Computer < ActiveRecord::Base
   end
   
   def image_name
-    name.gsub(/"/, "inch").gsub(/ /, "_")
+    name.gsub(/"/, "inch")
   end
 end
