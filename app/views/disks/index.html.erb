@@ -3,12 +3,12 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Speed</th>
+    <th>Size</th>
   </tr>
   <% for disk in @disks %>
     <tr>
       <td><%=h disk.name %></td>
-      <td><%=h disk.speed %></td>
+      <td><%=h disk.size %></td>
       <td><%= link_to "Show", disk %></td>
       <td><%= link_to "Edit", edit_disk_path(disk) %></td>
       <td><%= link_to "Destroy", disk, :confirm => 'Are you sure?', :method => :delete %></td>
