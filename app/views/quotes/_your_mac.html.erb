@@ -4,7 +4,7 @@
 				<div id="mac_header" class="tab-text" height="41">
 					<%= link_to_function "1 - Your Mac", shuffle(:expand =>["mac_body"], :contract => ["payment_body"]), {:class => "tab-text"} -%>
 				</div>
-				<div id="mac_body" style="display:none;">
+				<div id="mac_body" style="display:none">
 				  <%= render "mac_type", :f => f %>
 				</div>
 				<div id="worth_body" style="display:none" >

@@ -44,7 +44,7 @@ body {
 .offer-text {
   background-image: url(/images/home-image.jpg);
   background-position-x
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Courier;
   font-size: 19px;
   font-weight: normal;
   color: #888888;
@@ -54,12 +54,12 @@ body {
   text-decoration: none;
   font-variant: normal;
 }
-.numbered-list-text {
+.desktop-text {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 19px;
   font-weight: normal;
-  color: #FF0000;
-  padding-left:45px;
+  color: #FF0000; 
+  padding-left: 95px; 
   line-height: 1.7;
   text-decoration: none;
   font-variant: normal;
