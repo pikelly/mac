@@ -1,4 +1,4 @@
-page.replace "photo", image_tag("/images/#{@computer.name}.jpg", :width => "131", :border => "0", :id => "photo",  :name => "photo")
+page.replace "photo", image_tag("/images/#{@computer.name}.jpg", :width => "320", :border => "0", :id => "photo",  :name => "photo")
 page.replace "quote_processor_id", collection_select(:quote, :processor_id, @computer.processors, :id, :name, {:prompt => "Processor Speed"},{:class => "box", :classname => "box"})
 page.replace "quote_disk_id", collection_select( :quote, :disk_id, @computer.disks, :id, :name, { :prompt => "Hard Disk size"},{ :class => "box", :classname => "box"})
 page.replace "quote_ram_id", collection_select(:quote, :ram_id, @computer.rams, :id, :name, {:prompt => "Ram installed"}, {:class => "box", :classname => "box" })

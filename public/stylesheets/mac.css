@@ -6,25 +6,61 @@ body {
 }
 .four-border {
   border: 1px solid #B3986D;
+  margin-top:65px;
+}
+.banner-logo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #999999;
+  text-decoration: none;
 }
 .tab-bg {
-  background-image: url(/images/tab-bg.jpg);
+  background-image: url(/images/tab-bg.png);
   background-repeat: repeat-x;
+  padding-bottom:10px;
+  padding-top:0px;
 }
 .tab-text {
   font-family: Century Gothic, Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: normal;
-  color: #781800;
+  color: #ffffff;
+  margin-left: 0px;
+  margin-top: 5px;
+  padding-bottom:15px;
+  padding-left:50px;
   text-decoration: none;
-  padding-left:5px;
   font-variant: normal;
 }
 .tab-text1 {
   font-family: Century Gothic, Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: normal;
-  color: #781800;
+  color: #000000;
+  text-decoration: none;
+  font-variant: normal;
+}
+.offer-text {
+  background-image: url(/images/home-image.jpg);
+  background-position-x
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: normal;
+  color: #888888;
+  padding-left:25px;
+  padding-top:20px;
+  padding-bottom:12px;
+  text-decoration: none;
+  font-variant: normal;
+}
+.numbered-list-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: normal;
+  color: #FF0000;
+  padding-left:45px;
+  line-height: 1.7;
   text-decoration: none;
   font-variant: normal;
 }
@@ -61,6 +97,7 @@ body {
   font-size: 11px;
   font-weight: normal;
   color: #333333;
+  margin-top: 0px;
   text-decoration: none;
   padding:10px;
 }.heading {

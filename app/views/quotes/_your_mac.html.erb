@@ -1,8 +1,8 @@
 	<table cellspacing="0" cellpadding="0" border="0" width="100%">
 		<tr>
 			<td>
-				<div id="mac_header" class="tab-bg" height="41">
-					<%= link_to_function "1. Tell us about your mac", shuffle(:expand =>["mac_body"], :contract => ["payment_body"]), {:class => "tab-bg tab-text1"} -%>
+				<div id="mac_header" class="tab-text" height="41">
+					<%= link_to_function "1 - Your Mac", shuffle(:expand =>["mac_body"], :contract => ["payment_body"]), {:class => "tab-text"} -%>
 				</div>
 				<div id="mac_body" style="display:none;">
 				  <%= render "mac_type", :f => f %>
