@@ -16,16 +16,13 @@
                     <%= collection_select :quote, :computer_id, Computer.laptops, :id, :name, {}, {:class => "box", :classname => "box"} %>
 										<%= observe_field :quote_computer_id, :url => {:action => :computer_changed}, :with => "'id=' + value" -%>
                 </td>
-                <td>
-                    &nbsp;
-                </td>
+                
             </tr>
             <tr>
                 <td width="42%">
                     <table width="100%" cellspacing="0" cellpadding="0" border="0">
                         <tr>
                             <td align="center" width="23%">
-                                &nbsp;
                             </td>
                             <td align="center" width="49%">
                                 <center>
@@ -59,7 +56,7 @@
                                  	<%= collection_select :quote, :disk_id, @computer.disks, :id, :name, {:prompt => "Hard Disk size"},{ :class => "box", :classname => "box" } %>
                                 </td>
 								<td valign="top" class="form-text">
-                                    <%= f.check_box "cable" %>Charging Cable 
+                                    <%= f.check_box "adapter" %>Power Adapter
                                 </td>
                             </tr>
 							<tr>
@@ -67,7 +64,7 @@
                                   <%= collection_select :quote, :ram_id, @computer.rams, :id, :name, {:prompt => "Ram installed"},{ :class => "box", :classname => "box" } %>
                                 </td>
 								<td valign="top" class="form-text">
-                                    <%= f.check_box "adapter" %>Power Adapter
+                                    <%= f.check_box "media" %>Original install disks
                                 </td>
 							</tr>
                             <tr>	
@@ -75,43 +72,29 @@
                                   <%= collection_select :quote, :grade_id, Grade.all, :id, :name, {:prompt => "Its condition"}, {:class => "box", :classname => "box"} %>
                                 </td>
 								<td valign="top" class="form-text">
-                                    <%= f.check_box "media" %>Original install disks
-                                </td>
-                            </tr>
-							<tr>	
-								<td>
-								</td>		
-								<td valign="top" class="form-text">
                                     <%= f.check_box "manual" %>User Manuals
-                                </td>
-                            </tr>
-							<tr>	
-                                <td align="left" width="50%">
-                                                <a class="grade-text" onclick="javascript:window.open()" href="#">
-                                                    <u>
-                                                        more about grades
-                                                    </u>
-                                                </a>
-                                </td>
-								<td valign="top" class="form-text">
-                                    <%= f.check_box "mouse" %>Mouse
                                 </td>
                             </tr>
 							<tr>	
 								<td align="left" width="50%">
                                                 <a class="grade-text" onclick="javascript:window.open()" href="#">
                                                     <u>
-                                                        How to find this information
+                                                        more about grades
                                                     </u>
                                                 </a>
-                                            </td>
+									
+								</td>		
 								<td valign="top" class="form-text">
-                                    <%= f.check_box "keyboard" %>Keyboard
+                                    <%= f.check_box "mouse" %>Mouse
                                 </td>
                             </tr>
 							<tr>	
-                                <td>
-                                	
+                                <td align="left" width="50%">
+                                                <a class="info-text" onclick="javascript:window.open()" href="#">
+                                                    <u>
+                                                        How to find this information
+                                                    </u>
+                                                </a>
                                 </td>
 								<td valign="top" class="form-text">
                                     <%= f.check_box "keyboard" %>Keyboard

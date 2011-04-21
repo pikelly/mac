@@ -16,16 +16,16 @@ body {
   text-decoration: none;
 }
 .tab-bg {
-  background-image: url(/images/long-bar-button-811.jpg);
-  background-repeat: repeat-x;
+  background-image: url(/images/long-bar-button-808.jpg);
+  background-repeat: no-repeat;
   padding-bottom:10px;
   padding-top:0px;
 }
 .tab-text {
   font-family: Century Gothic, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: normal;
-  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  color: #555555;
   margin-left: 0px;
   margin-top: 5px;
   padding-bottom:15px;
@@ -35,9 +35,9 @@ body {
 }
 .tab-text1 {
   font-family: Century Gothic, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: normal;
-  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  color: #555555;
   text-decoration: none;
   font-variant: normal;
 }
@@ -69,7 +69,7 @@ body {
   font-size: 11px;
   font-weight: normal;
   color: #888888;
-  padding-left: 15px; 
+  padding-left: 34px; 
   text-decoration: none;
 }
 .grade-text:hover{
@@ -78,6 +78,22 @@ body {
   font-weight: normal;
   color: #FF0000;
   text-decoration: underline;
+}
+.info-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  color: #888888;
+  padding-left: 15px; 
+  text-decoration: none;
+}
+.info-text:hover{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  color: #FF0000;
+  padding-left: 15px; 
+  text-decoration: none;
 }
 .footer-text {
   font-family: Arial, Helvetica, sans-serif;

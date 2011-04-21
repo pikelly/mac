@@ -2,7 +2,7 @@
 		<tr>
 			<td>
 				<div id="mac_header" class="tab-text" height="37">
-					<%= link_to_function "1 - Your Mac", shuffle(:expand =>["mac_body"], :contract => ["payment_body"]), {:class => "tab-text"} -%>
+					<%= link_to_function "1 - Details Of Your Mac", shuffle(:expand =>["mac_body"], :contract => ["payment_body"]), {:class => "tab-text1"} -%>
 				</div>
 				<div id="mac_body" style="display:none">
 				  <%= render "mac_type", :f => f %>
