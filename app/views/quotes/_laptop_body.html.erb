@@ -4,8 +4,11 @@
     <table width="800" cellspacing="0" cellpadding="0" border="0">
         <tbody>
             <tr>
-                <td class="productimagetext" colspan="2">
-                    Please keep clicking until you find your <span id="producttype">Laptop</span>
+                <td class="productimagetext" colspan="1">
+                    Please select your <span id="producttype">Laptop</span>
+                </td>
+				<td class="what-else-text" colspan="1">
+                    <strong>What else is included?</strong>
                 </td>
             </tr>
             <tr>
@@ -47,78 +50,86 @@
                                 <td>
                                   <%= collection_select :quote, :processor_id, @computer.processors, :id, :name, {:prompt => "Processor Speed"},{ :classname => "box", :class => "box"} -%>
                                 </td>
+								<td valign="top" class="form-text">
+                                    <%= f.check_box "box" %>Original Box 
+                                </td>
+							</tr>
+                            <tr>	
                                 <td>
-                                  <%= collection_select :quote, :disk_id, @computer.disks, :id, :name, {:prompt => "Hard Disk size"},{ :class => "box", :classname => "box" } %>
+                                 	<%= collection_select :quote, :disk_id, @computer.disks, :id, :name, {:prompt => "Hard Disk size"},{ :class => "box", :classname => "box" } %>
+                                </td>
+								<td valign="top" class="form-text">
+                                    <%= f.check_box "cable" %>Charging Cable 
                                 </td>
                             </tr>
-                            <tr>
+							<tr>
                                 <td>
                                   <%= collection_select :quote, :ram_id, @computer.rams, :id, :name, {:prompt => "Ram installed"},{ :class => "box", :classname => "box" } %>
                                 </td>
+								<td valign="top" class="form-text">
+                                    <%= f.check_box "adapter" %>Power Adapter
+                                </td>
+							</tr>
+                            <tr>	
                                 <td>
                                   <%= collection_select :quote, :grade_id, Grade.all, :id, :name, {:prompt => "Its condition"}, {:class => "box", :classname => "box"} %>
                                 </td>
+								<td valign="top" class="form-text">
+                                    <%= f.check_box "media" %>Original install disks
+                                </td>
                             </tr>
-                            <tr>
-                                <td align="right" style="padding-right: 20px;" colspan="2">
-                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                        <tr>
-                                            <td align="left" width="67%">
-                                                <a class="grade-text" onclick="javascript:window.open()" href="#">
-                                                    <u>
-                                                        Click to see how to find this information
-                                                    </u>
-                                                </a>
-                                            </td>
-                                            <td align="right" width="33%">
+							<tr>	
+								<td>
+								</td>		
+								<td valign="top" class="form-text">
+                                    <%= f.check_box "manual" %>User Manuals
+                                </td>
+                            </tr>
+							<tr>	
+                                <td align="left" width="50%">
                                                 <a class="grade-text" onclick="javascript:window.open()" href="#">
                                                     <u>
                                                         more about grades
                                                     </u>
                                                 </a>
-                                            </td>
-                                        </tr>
-                                    </table>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td class="form-text" colspan="2">
-                                    <strong>What else is included?</strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td valign="top" class="form-text">
-                                    <%= f.check_box "box" %>Original Box 
-                                    <br>
-                                    <%= f.check_box "cable" %>Charging Cable 
-                                    <br>
-                                    <%= f.check_box "adapter" %>Power Adapter
-                                    <br>
-                                    <%= f.check_box "media" %>Original install disks
-                                    <br>
-                                </td>
-                                <td valign="top" class="form-text">
-                                    <%= f.check_box "manual" %>User Manuals
-                                    <br>
+								<td valign="top" class="form-text">
                                     <%= f.check_box "mouse" %>Mouse
-                                    <br>
+                                </td>
+                            </tr>
+							<tr>	
+								<td align="left" width="50%">
+                                                <a class="grade-text" onclick="javascript:window.open()" href="#">
+                                                    <u>
+                                                        How to find this information
+                                                    </u>
+                                                </a>
+                                            </td>
+								<td valign="top" class="form-text">
+                                    <%= f.check_box "keyboard" %>Keyboard
+                                </td>
+                            </tr>
+							<tr>	
+                                <td>
+                                	
+                                </td>
+								<td valign="top" class="form-text">
                                     <%= f.check_box "keyboard" %>Keyboard
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    &nbsp;
-                                </td>
-                                <td>
-                                    &nbsp;
+                                <td align="right" style="padding-right: 20px;" colspan="2">
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                        
+                                    </table>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                	 <%= link_to_function image_tag("back_button.jpg", :size => "195x41", :border => "0"), shuffle(:contract => ["laptop_body"], :expand => "mac_body") -%>
+                                	 <%= link_to_function image_tag("glass-buttons-back-195.jpg", :size => "195x36", :border => "0"), shuffle(:contract => ["laptop_body"], :expand => "mac_body") -%>
                                 </td>
                                 <td>
-                                   <%= link_to_remote image_tag("worth_button.jpg", :size => "195x41", :border => "0"), :url => {:action => "calculate"}, :with => "Form.serialize($('new_quote'))",
+                                   <%= link_to_remote image_tag("worth_button.jpg", :size => "195x72", :border => "0"), :url => {:action => "calculate"}, :with => "Form.serialize($('new_quote'))",
                                         :success => shuffle(:contract => ["laptop_body"], :expand => ["worth_body"]) -%>
                                 </td>
                             </tr>
