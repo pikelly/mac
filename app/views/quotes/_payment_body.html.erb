@@ -1,12 +1,12 @@
-<div id="div5" style="height: auto;">
-    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+<div id="div5" style="height: auto;" align="center";>
+    <table width="801" cellspacing="0" cellpadding="0" border="0" class="four-border">
         <tbody>
             <tr>
-                <td class="four-border">
+                <td>
                     <table align="center" width="96%" cellspacing="2" cellpadding="2" border="0">
                         <tbody>
                             <tr>
-                                <td class="simple-text">
+                                <td colspan="2" class="simple-text">
                                     <div id="macboxyes" style="display:none;">
                                         <p>
                                             To finish, you need to pick a time and date convenient to you in the calender below. You will also need to accept our terms and condition by checking the tickbox and then clicking "I Accept". Once you have accepted, you will receive a confirmation email with all your order's information in it. Our courier will bring a label with them unless you are instructed otherwise, so you will not need to print anything off.
@@ -93,9 +93,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="right" class="footer-text">
-									<%= link_to_function image_tag("back.jpg", :size => "184x28", :border => "0"), shuffle(:contract => ["payment_body"], :expand => "location_body")%>
+                                <td align="left">
+									<%= link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["payment_body"], :expand => "location_body")%>
                                 </td>
+								<td align="right">
+									<%= link_to_function image_tag("i_accept_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["payment_body"], :expand => "location_body")%>
+                                </td>	
                             </tr>
                         </tbody>
                     </table>

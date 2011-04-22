@@ -38,7 +38,7 @@
                                 <td class="form-text">
                                     <%= f.text_field :road, :tabindex => 3, :class => "box" %>
                                 </td>
-                                <td class="footer-text" colspan="2" rowspan="2"><p>Please tick the box to confirm that you have suitable packaging for your Mac (see our Terms and Conditions at bottom of page for more details)</p></td>
+                                <td class="footer-text" colspan="2" rowspan="2"><p>Please tick the box to confirm that you have suitable packaging for your Mac <br> (see our Terms and Conditions at bottom of page for more details)</p></td>
                                 
                             </tr>
                             <tr>
@@ -54,7 +54,7 @@
                                   <%= f.text_field :postcode, :tabindex => 5, :class => "box "%>
                                 </td>
                                 <td class="footer-text" colspan="2">
-                                    <%= f.check_box :packaged, :tabindex => 9, :class => "box1" %>
+                                    <%= f.check_box :packaged, :tabindex => 9, :class => "form-text" %>
                                     I confirm I have suitably packaged my Mac
                                 </td>
 								<%= observe_field "quote_packaged", :function => toggle_macbox %>
@@ -70,7 +70,7 @@
                                 <td class="footer-text" colspan="2">
                                 	<%= link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["location_body"], :expand => "worth_body")%>
                                 </td>
-                                <td align="right" class="footer-text" colspan="2">
+                                <td align="right" colspan="2">
                                 	<%= link_to_remote image_tag("continue_button.jpg", :size => "285x36", :border => "0"), :url => {:action => "validate_shipping"}, :with => "Form.serialize($('new_quote'))",
                                         :success => shuffle(:contract => ["location_body"], :expand => ["payment_body"])%>
                                 </td>
