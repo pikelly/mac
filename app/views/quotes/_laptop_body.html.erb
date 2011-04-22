@@ -5,7 +5,7 @@
         <tbody>
             <tr>
                 <td class="productimagetext" colspan="1">
-                    Please select your <span id="producttype">Laptop</span>
+                    <strong>Please select your <span id="producttype">Laptop</span></strong>
                 </td>
 				<td class="what-else-text" colspan="1">
                     <strong>What else is included?</strong>
@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <td align="center">
-                    <%= collection_select :quote, :computer_id, Computer.laptops, :id, :name, {}, {:class => "box", :classname => "box"} %>
+                    <%= collection_select :quote, :computer_id, Computer.laptops, :id, :name, {}, {:class => "box-wide", :classname => "box-wide"} %>
 										<%= observe_field :quote_computer_id, :url => {:action => :computer_changed}, :with => "'id=' + value" -%>
                 </td>
                 

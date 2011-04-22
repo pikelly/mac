@@ -1,4 +1,4 @@
-body {
+.body {
   margin-left: 0px;
   margin-top: 0px;
   margin-right: 0px;
@@ -6,17 +6,19 @@ body {
 }
 .four-border {
   border: 1px solid #B3986D;
-  margin-top:65px;
+  margin-top:15px;
 }
 .banner-logo {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 36px;
+  font-size: 30px;
+  text-align: left;
   font-weight: bold;
-  color: #999999;
+  color: #555555;
+  margin-top:15px;
   text-decoration: none;
 }
 .tab-bg {
-  background-image: url(/images/long-bar-button-808.jpg);
+  background-image: url(/images/long-bar-button-809.jpg);
   background-repeat: no-repeat;
   padding-bottom:10px;
   padding-top:0px;
@@ -43,14 +45,14 @@ body {
 }
 .offer-text {
   background-image: url(/images/home-image.jpg);
-  background-position-x
-  font-family: Courier;
-  font-size: 19px;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
   font-weight: normal;
   color: #888888;
   padding-left:25px;
   padding-top:20px;
-  padding-bottom:12px;
+  padding-bottom:18px;
   text-decoration: none;
   font-variant: normal;
 }
@@ -66,7 +68,7 @@ body {
 }
 .grade-text {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: normal;
   color: #888888;
   padding-left: 34px; 
@@ -74,14 +76,14 @@ body {
 }
 .grade-text:hover{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: normal;
   color: #FF0000;
   text-decoration: underline;
 }
 .info-text {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: normal;
   color: #888888;
   padding-left: 15px; 
@@ -89,7 +91,7 @@ body {
 }
 .info-text:hover{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: normal;
   color: #FF0000;
   padding-left: 15px; 
@@ -140,7 +142,15 @@ body {
   color: #333333;
   text-decoration: none;
   border: 1px solid #333333;
-
+}
+.box-wide {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  color: #333333;
+  text-decoration: none;
+  border: 1px solid #333333;
+  width: 220px;
 }
 .form-text {
   font-family: Arial, Helvetica, sans-serif;
@@ -183,8 +193,8 @@ body {
 }
 .productimagetext{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: normal;
   text-align: center;
   color: #333333;
   text-decoration: none;
