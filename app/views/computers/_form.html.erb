@@ -5,7 +5,7 @@
     <%= f.text_field :name %>
   </p>
 	<p>
-		<%= edit_habtm @computer, Processor %>
+		<%= edit_habtm @computer, Processor, :long => true %>
   </p>
   <p>
     <%= edit_habtm @computer, Disk %>

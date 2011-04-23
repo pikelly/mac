@@ -7,6 +7,7 @@
       %>
       <%= contract association %>
       <%= hidden_field_tag "#{klass.class.table_name.singularize}[#{association.class.to_s.downcase}_ids][]" %>
+      <%= "<br>" if options[:long]%>
     <% end -%>
   <% end -%>
 </div>
