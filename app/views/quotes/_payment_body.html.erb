@@ -1,5 +1,5 @@
 <div id="div5" style="height: auto;" align="center";>
-    <table width="801" cellspacing="0" cellpadding="0" border="0" class="four-border">
+    <table width="805" cellspacing="0" cellpadding="0" border="0" class="four-border">
         <tbody>
             <tr>
                 <td>
@@ -11,10 +11,10 @@
                                         <tbody>
                                             <tr>
                                                 <td valign="top">
-                                                    <table width="220" cellspacing="2" cellpadding="2" border="0" class="four-border">
+                                                    <table width="220" cellspacing="2" cellpadding="2" border="0">
                                                         <tbody>
                                                             <tr>
-                                                                <td>
+                                                                <td><br>
                                                                 	<%= f.date_select :collection_date, :start_year => Time.now.year , :end_year => Time.now.year + 1 %>
                                                                     <select id="timedate" class="box" name="timedate">
                                                                         <option selected="selected" value="">Select Date</option>
@@ -30,7 +30,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                	<%= f.text_area :comment, :class => "box-wide", :rows => 6 %>
+                                                                	<%= f.text_area :comment, :class => "box-wide", :rows => 5 %>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -87,7 +87,7 @@
                                 	&nbsp;
                                 </td>
 								<td colspan="3" align="left" class="footer-text">
-                                	&nbsp;&nbsp;<%= f.check_box :iagree, :tabindex => 9, :class => "form-text" %>
+                                	&nbsp;&nbsp;<%= f.check_box :iagree, :tabindex => 9, :class => "footer-text" %>
                                     I agree to the <%= link_to_function "terms and conditions", terms_and_conditions, {:style => "underline"} %>
                                     of this contract
                                 </td>
@@ -107,8 +107,6 @@
                     </table>    
                 </td>
             </tr>
-            
         </tbody>
     </table>
-	&nbsp;
 </div>
