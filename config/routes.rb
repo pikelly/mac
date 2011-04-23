@@ -4,17 +4,15 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :quotes, :collection => {:computer_changed => :get, :calculate => :post}
 
-  map.resources :computers
-
   map.resources :grades
 
-  map.resources :rams
+  map.resources :rams, :collection => {:sort => :get}
 
-  map.resources :disks
+  map.resources :disks, :collection => {:sort => :get}
 
-  map.resources :processors
+  map.resources :processors, :collection => {:sort => :get}
 
-  map.resources :computers
+  map.resources :computers, :collection => {:sort => :get}
   
   map.connect 'home/main', :controller => :home, :action => :main
 

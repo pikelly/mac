@@ -45,4 +45,14 @@ class ComputersController < ApplicationController
   def quote
     @computer = Computer.first
   end
+
+  def sort
+    @computers = Computer.all
+    for computer in @computers
+      computer.position = params["computer-list"].index(computer.id.to_s)+1
+      computer.save
+    end
+    head 200
+  end
+
 end

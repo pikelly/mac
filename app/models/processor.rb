@@ -5,7 +5,9 @@ class Processor < ActiveRecord::Base
   has_many :quotes
   has_many :prices
 
-    
+  acts_as_list
+  default_scope :order => "position"
+
   def <=> other
     self.name <=> other.name
   end

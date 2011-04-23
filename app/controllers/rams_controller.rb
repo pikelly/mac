@@ -41,4 +41,14 @@ class RamsController < ApplicationController
     flash[:notice] = "Successfully destroyed ram."
     redirect_to rams_url
   end
+
+  def sort
+    @rams = Ram.all
+    for ram in @rams
+      ram.position = params["ram-list"].index(ram.id.to_s)+1
+      ram.save
+    end
+    head 200
+  end
+
 end

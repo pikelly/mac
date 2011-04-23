@@ -1,19 +1,19 @@
 <% title "Disks" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Size</th>
-  </tr>
+<ul id="disk-list" style="cursor:move;">
   <% for disk in @disks %>
-    <tr>
-      <td><%=h disk.name %></td>
-      <td><%=h disk.size %></td>
-      <td><%= link_to "Show", disk %></td>
-      <td><%= link_to "Edit", edit_disk_path(disk) %></td>
-      <td><%= link_to "Destroy", disk, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+    <li id="item_<%= disk.id -%>">
+      <%=h disk.name %>
+      <%=h disk.size %>
+      <%= link_to "Show", disk %>
+      <%= link_to "Edit", edit_disk_path(disk) %>
+      <%= link_to "Destroy", disk, :confirm => 'Are you sure?', :method => :delete %>
+    </li>
   <% end %>
-</table>
+</ul>
+<%= sortable_element "disk-list",
+    :url => {:action => "sort"},
+    :complete => visual_effect(:highlight, "disk-list")
+%>
 
 <p><%= link_to "New Disk", new_disk_path %></p>

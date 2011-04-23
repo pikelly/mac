@@ -1,19 +1,20 @@
 <% title "Rams" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Size</th>
-  </tr>
+<ul  id="ram-list" style="cursor:move;">
   <% for ram in @rams %>
-    <tr>
-      <td><%=h ram.name %></td>
-      <td><%=h ram.size %></td>
-      <td><%= link_to "Show", ram %></td>
-      <td><%= link_to "Edit", edit_ram_path(ram) %></td>
-      <td><%= link_to "Destroy", ram, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+    <li id="item_<%= ram.id -%>">
+      <%=h ram.name %>
+      <%=h ram.size %>
+      <%= link_to "Show", ram %>
+      <%= link_to "Edit", edit_ram_path(ram) %>
+      <%= link_to "Destroy", ram, :confirm => 'Are you sure?', :method => :delete %>
+    </li>
   <% end %>
-</table>
+</ul>
+
+<%= sortable_element "ram-list",
+    :url => {:action => "sort"},
+    :complete => visual_effect(:highlight, "ram-list")
+%>
 
 <p><%= link_to "New Ram", new_ram_path %></p>

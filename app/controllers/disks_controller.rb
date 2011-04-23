@@ -41,4 +41,14 @@ class DisksController < ApplicationController
     flash[:notice] = "Successfully destroyed disk."
     redirect_to disks_url
   end
+
+  def sort
+    @disks = Disk.all
+    for disk in @disks
+      disk.position = params["disk-list"].index(disk.id.to_s)+1
+      disk.save
+    end
+    head 200
+  end
+
 end
