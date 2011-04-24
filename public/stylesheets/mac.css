@@ -5,22 +5,23 @@
   margin-bottom: 0px;
 }
 .four-border {
-  border: 1px solid #B3986D;
-  margin-top:15px;
+  border: 1px solid #666666;
+  margin-top:4px;
+  padding-bottom:2px;
 }
 .banner-logo {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   text-align: left;
   font-weight: bold;
-  color: #555555;
-  margin-top:15px;
+  color: #666666;
+  margin-top:6px;
   text-decoration: none;
 }
 .tab-bg {
   background-image: url(/images/long-bar-button-809.jpg);
   background-repeat: no-repeat;
-  padding-bottom:10px;
+  padding-bottom:0px;
   padding-top:0px;
 }
 .tab-text {
@@ -30,7 +31,7 @@
   color: #555555;
   margin-left: 0px;
   margin-top: 5px;
-  padding-bottom:15px;
+  padding-bottom:6px;
   padding-left:50px;
   text-decoration: none;
   font-variant: normal;
@@ -49,7 +50,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: normal;
-  color: #888888;
+  color: #666666;
   padding-left:25px;
   padding-top:20px;
   padding-bottom:18px;
@@ -101,6 +102,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
   font-weight: normal;
+  text-align: left;
   color: #333333;
   text-decoration: none;
 }
@@ -108,7 +110,21 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
   font-weight: normal;
-  color: #000000;
+  color: #ff0000;
+  text-decoration: none;
+}
+.bottom-links-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #666666;
+  text-decoration: none;
+}
+.bottom-links-text:hover{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #ff0000;
   text-decoration: none;
 }
 .text {
@@ -150,15 +166,15 @@
   color: #333333;
   text-decoration: none;
   border: 1px solid #333333;
-  width: 220px;
+  width: 210px;
 }
 .form-text {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   font-weight: normal;
+  text-align: left;
   color: #333333;
   text-decoration: none;
-  
 }
 .Your-Mac {
   font-family: Arial, Helvetica, sans-serif;
@@ -167,7 +183,6 @@
   color: #333333;
   text-decoration: none;
   padding:10px;
-  
 }
 .price {
   font-family: Arial, Helvetica, sans-serif;
@@ -178,12 +193,12 @@
 }
 .simple-text {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: normal;
-  color: #333333;
+  color: #666666;
   text-decoration: none;
+  padding-left:16px;
   line-height:18px;
-  
 }
 .style1 {
   color: #FF0000;
@@ -193,7 +208,7 @@
 }
 .productimagetext{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: normal;
   text-align: center;
   color: #333333;
@@ -202,11 +217,32 @@
 }
 .what-else-text{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: normal;
   color: #333333;
   text-align: center;
-  padding-top:15px;
-  padding-left:140px;
+  padding-top:5px;
+  padding-left:150px;
   text-decoration: none;
+}
+.your-mac-is-worth {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: normal;
+  color: #666666;
+  padding-top:15px;
+  padding-bottom:15px;
+  text-decoration: none;
+  font-variant: normal;
+}
+.valuation {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 84px;
+  font-weight: normal;
+  color: #ff0000;
+  padding-top:0px;
+  padding-bottom:0px;
+  margin-top:0px;
+  text-decoration: none;
+  font-variant: normal;
 }

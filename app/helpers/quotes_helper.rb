@@ -22,7 +22,7 @@ module QuotesHelper
   end
   def terms_and_conditions
     update_page do |page|
-      page.alert("The t&c")
+      page.alert("The t&c<br>hello")
     end
   end
 end
