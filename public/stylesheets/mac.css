@@ -1,3 +1,10 @@
+:focus {
+outline: 0;
+}
+html { 
+height: 100%; 
+margin-bottom: 1px; 
+}
 .body {
   margin-left: 0px;
   margin-top: 0px;
@@ -72,7 +79,7 @@
   font-size: 12px;
   font-weight: normal;
   color: #888888;
-  padding-left: 34px; 
+  padding-left: 10px; 
   text-decoration: none;
 }
 .grade-text:hover{
@@ -81,22 +88,6 @@
   font-weight: normal;
   color: #FF0000;
   text-decoration: underline;
-}
-.info-text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: normal;
-  color: #888888;
-  padding-left: 15px; 
-  text-decoration: none;
-}
-.info-text:hover{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: normal;
-  color: #FF0000;
-  padding-left: 15px; 
-  text-decoration: none;
 }
 .footer-text {
   font-family: Arial, Helvetica, sans-serif;
