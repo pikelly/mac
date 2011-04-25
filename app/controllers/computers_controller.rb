@@ -8,7 +8,7 @@ class ComputersController < ApplicationController
   end
 
   def new
-    @computer = Computer.new
+    @computer = Computer.new :laptop => true
   end
 
   def create

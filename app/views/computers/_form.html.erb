@@ -4,7 +4,11 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
-	<p>
+  <p>
+    <%= f.label :laptop %><br />
+    <%= f.check_box :laptop %>
+  </p>
+  <p>
 		<%= edit_habtm @computer, Processor, :long => true %>
   </p>
   <p>
