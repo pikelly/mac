@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def edit_habtm klass, association, options={}
-    render :partial => 'common/edit_habtm', :locals =>{ :klass => klass, :associations => association.all.sort.delete_if{|e| e == klass}, :options => options}
+    render :partial => 'common/edit_habtm', :locals =>{ :klass => klass, :associations => association.all.delete_if{|e| e == klass}, :options => options}
   end
 
   def contract name

@@ -12,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :processors, :collection => {:sort => :get}
 
-  map.resources :computers, :collection => {:sort => :get}
+  map.resources :computers, :collection => {:sort => :get}, :member => {:prices => :get}
   
   map.connect 'home/main', :controller => :home, :action => :main
 

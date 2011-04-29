@@ -1,0 +1,31 @@
+<% form_for @computer do |f| %>
+	<% content_tag :fieldset do -%>
+		<legend>Grades</legend>
+		<% for grade in %w{a b c d e}%>
+		  <%= f.label :grade, grade.capitalize -%>
+		  <%= f.text_field grade, :size => 5 %>
+		<% end -%>
+	<% end -%>
+	<% content_tag :fieldset do -%>
+		<legend>CPU Base Prices</legend>
+		<% f.fields_for :processor_prices do |p| -%>
+			<%= p.label :cpu, p.object.processor.name %>
+			<%= p.text_field :value, :size => 5 %>
+		<% end -%>
+	<% end -%>
+	<% content_tag :fieldset do -%>
+		<legend>Ram Prices</legend>
+		<% f.fields_for :ram_prices do |p| -%>
+			<%= p.label :ram, p.object.ram.name %>
+			<%= p.text_field :value, :size => 5 %>
+		<% end -%>
+	<% end -%>
+	<% content_tag :fieldset do -%>
+		<legend>Disk Prices</legend>
+		<% f.fields_for :disk_prices do |p| -%>
+			<%= p.label :disk, p.object.disk.name %>
+			<%= p.text_field :value, :size => 5 %>
+		<% end -%>
+	<% end -%>
+  <p><%= f.submit %></p>
+<% end %>

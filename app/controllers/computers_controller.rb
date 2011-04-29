@@ -25,6 +25,10 @@ class ComputersController < ApplicationController
     @computer = Computer.find(params[:id])
   end
 
+  def prices
+    @computer = Computer.find(params[:id])
+  end
+
   def update
     @computer = Computer.find(params[:id])
     if @computer.update_attributes(params[:computer])

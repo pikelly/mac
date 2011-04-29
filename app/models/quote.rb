@@ -11,7 +11,14 @@ class Quote < ActiveRecord::Base
 
   def calculate
     return false unless valid?
+    return computer.e if grade.name == "Grade E"
     
-    Price.find_by_computer_id_and_disk_id_and_ram_id_and_grade_id(computer, disk, ram, grade).value
+    pp = ProcessorPrice.find_by_processor_id_and_computer_id(@processor.id, @computer.id).value || 0
+    rp = RamPrice.find_by_ram_id_and_computer_id(@ram.id, @computer.id).value || 0
+    dp = DiskPrice.find_by_disk_id_and_computer_id(@disk.id, @computer.id).value || 0
+    price = pp + rp + dp
+    
+    price  = price - (price * eval("computer.#{grade.name.match(/(.)$/)[1].downcase}").to_i)/100 
+    price
   end
 end

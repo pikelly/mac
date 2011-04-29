@@ -1,7 +1,9 @@
 class Disk < ActiveRecord::Base
   attr_accessible :name, :speed
   
-  has_and_belongs_to_many :computers
+  #has_and_belongs_to_many :computers
+  has_many :disk_prices
+  has_many :computers, :through => :disk_prices
   has_many :quotes
   has_many :prices
 

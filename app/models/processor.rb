@@ -1,7 +1,9 @@
 class Processor < ActiveRecord::Base
   attr_accessible :name, :speed
   
-  has_and_belongs_to_many :computers
+  #has_and_belongs_to_many :computers
+  has_many :processor_prices
+  has_many :computers, :through => :processor_prices
   has_many :quotes
   has_many :prices
 
