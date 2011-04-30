@@ -113,7 +113,8 @@
                                 	 <%= link_to_function image_tag("glass-buttons-back-195.jpg", :size => "197x38", :border => "0"), shuffle(:contract => ["laptop_body"], :expand => "mac_body") -%>
                                 </td>
                                 <td>
-                                   <%= link_to_remote image_tag("worth_button.jpg", :size => "197x74", :border => "0"), :url => {:action => "calculate"}, :with => "Form.serialize($('new_quote'))",
+                                   <%= link_to_remote image_tag("worth_button.jpg", :size => "197x74", :border => "0"), :url => {:action => "calculate"}, 
+										:with => "Form.serialize($('new_quote'))" + " + '&quote[stage]=details'",
                                         :success => shuffle(:contract => ["laptop_body"], :expand => ["worth_body"]) -%>
                                 </td>
                             </tr>

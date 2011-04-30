@@ -71,7 +71,8 @@
                                 	<%= link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["location_body"], :expand => "worth_body")%>
                                 </td>
                                 <td align="right" colspan="2">
-                                	<%= link_to_remote image_tag("continue_button.jpg", :size => "285x36", :border => "0"), :url => {:action => "validate_shipping"}, :with => "Form.serialize($('new_quote'))",
+                                	<%= link_to_remote image_tag("continue_button.jpg", :size => "285x36", :border => "0"), :url => {:action => "validate_quote"}, 
+										:with => "Form.serialize($('new_quote'))" + " + '&quote[stage]=location'",
                                         :success => shuffle(:contract => ["location_body"], :expand => ["payment_body"])%>
                                 </td>
                             </tr>

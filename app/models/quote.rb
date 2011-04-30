@@ -1,14 +1,30 @@
 class Quote < ActiveRecord::Base
   #attr_accessible :computer, :disk, :ram, :grade, :box, :cable, :adapter, :media, :manual, :mouse, :keyboard
-  
+
+  attr_accessor :stage
+
   belongs_to :computer
   belongs_to :disk
   belongs_to :ram
   belongs_to :grade
   belongs_to :processor
   
-  validates_presence_of :computer, :disk, :ram, :grade, :processor
-
+  validates_presence_of :computer, :if => Proc.new {|q| ["details"].include? q.stage}
+  validates_presence_of :disk, :message => "selection is required", :if => Proc.new {|q| ["details", "location", "payment"].include? q.stage}
+  validates_presence_of :ram, :grade, :processor, :if => Proc.new {|q| ["details", "location", "payment"].include? q.stage}
+  
+  validates_format_of :name, :with => /^[\s\w]+$/,       :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :serialno, :with => /^[\w\d]+$/,   :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :houseid, :with => /^[\s\w\d]+$/,  :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :email, :with => /^[\w\d\.@]+$/,   :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :road, :with => /^[\s\w]+$/,       :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :city, :with => /^[\s\w]+$/,       :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :postcode, :with => /^[\d\w]+$/,   :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :phone, :with => /^[\d\(\)\s]+$/,  :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  
+  validates_numericality_of :confirmation, :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
+  validates_numericality_of :iagree,       :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
+  
   def calculate
     return false unless valid?
     return computer.e if grade.name == "Grade E"
@@ -20,5 +36,18 @@ class Quote < ActiveRecord::Base
     
     price  = price - (price * eval("computer.#{grade.name.match(/(.)$/)[1].downcase}").to_i)/100 
     price
+  end
+
+  private
+  def validate
+    return true if stage != "payment"
+    if collection_date > 2.weeks.from_now
+          self.errors.add_to_base "Your collection date is more than two weeks away."
+      return false
+    elsif collection_date < Time.now
+      self.errors.add_to_base "Your collection date is in the past."
+      return false
+    end
+    true
   end
 end
