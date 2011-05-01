@@ -70,7 +70,8 @@ class QuotesController < ApplicationController
   def submit_quote
     @quote = Quote.new params[:quote]
     if @quote.valid?
-      
+      mail = Notifier.create_quote @quote
+      status = Notifier.deliver(mail)
       head 200
       return
     else
