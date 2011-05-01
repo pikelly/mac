@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+  skip_before_filter :require_login, :only => :new
   def index
     @quotes = Quote.all
   end
@@ -55,17 +56,37 @@ class QuotesController < ApplicationController
       end
       return
     else
-      flash[:error] = @quote.errors.full_messages
-      flash.discard
-      render :update, :status => 400 do |page|
-        @computer = @quote.computer || Computer.first
-        page.alert(@quote.errors.full_messages.join("\n"))
-        #page.replace_html "laptop_body", render("laptop_body")
-      end
+      report_errors
     end
   end
-  def validate_shipping
+  def validate_quote
     @quote = Quote.new params[:quote]
-    head 200
+    if @quote.valid?
+      head 200
+      return
+    else
+      report_errors
+    end
+  end
+  def submit_quote
+    @quote = Quote.new params[:quote]
+    if @quote.valid?
+      mail = Notifier.create_quote @quote
+      status = Notifier.deliver(mail)
+      head 200
+      return
+    else
+      report_errors
+    end    
+  end
+  private
+  def report_errors
+    err = @quote.errors.full_messages.map{|m| m.gsub(/Iagree is required/, "You must agree to the Terms and Conditions")}
+    flash[:error] = err
+    flash.discard
+    render :update, :status => 400 do |page|
+      @computer = @quote.computer || Computer.first
+      page.alert(err.join("\n"))
+    end
   end
 end

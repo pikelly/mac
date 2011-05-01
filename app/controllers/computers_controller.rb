@@ -8,7 +8,7 @@ class ComputersController < ApplicationController
   end
 
   def new
-    @computer = Computer.new
+    @computer = Computer.new :laptop => true
   end
 
   def create
@@ -22,6 +22,10 @@ class ComputersController < ApplicationController
   end
 
   def edit
+    @computer = Computer.find(params[:id])
+  end
+
+  def prices
     @computer = Computer.find(params[:id])
   end
 

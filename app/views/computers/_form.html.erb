@@ -1,17 +1,33 @@
 <% form_for @computer do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
+    <%= f.label :laptop %>
+    <%= f.check_box :laptop %>
+    <%= link_to "Prices", prices_computer_url(@computer) unless @computer.new_record?%>
   </p>
-	<p>
-		<%= edit_habtm @computer, Processor, :long => true %>
-  </p>
-  <p>
-    <%= edit_habtm @computer, Disk %>
-  </p>
-  <p>
-    <%= edit_habtm @computer, Ram %>
-  </p>
+  <table>
+	<tr>
+		<td valign="top">
+			<% content_tag :fieldset do%>
+				<legend>Processors</legend>
+				<%= edit_habtm @computer, Processor, :long => true %>
+			<% end %>
+		</td>
+		<td valign="top">
+			<% content_tag :fieldset do %>
+				<legend>Disk</legend>
+				<%= edit_habtm @computer, Disk, :long => true %>
+			<% end %>
+		</td>
+		<td valign="top">
+			<% content_tag :fieldset do %>
+				<legend>Ram</legend>
+				<%= edit_habtm @computer, Ram, :long => true  %>
+			<% end %>
+		</td>
+	</tr>  	
+  </table>
   <p><%= f.submit %></p>
 <% end %>

@@ -1,8 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
+  map.signup 'signup', :controller => 'users', :action => 'new'
+  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
+  map.login 'login', :controller => 'sessions', :action => 'new'
+  map.resources :sessions
+
+  map.resources :users
+
   map.root :controller => "home"
   map.resources :prices
 
-  map.resources :quotes, :collection => {:computer_changed => :get, :calculate => :post}
+  map.resources :quotes, :collection => {:computer_changed => :get, :calculate => :post, :how_to_find => :get, :submit_quote => :post}
 
   map.resources :grades
 
@@ -12,7 +19,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :processors, :collection => {:sort => :get}
 
-  map.resources :computers, :collection => {:sort => :get}
+  map.resources :computers, :collection => {:sort => :get}, :member => {:prices => :get}
   
   map.connect 'home/main', :controller => :home, :action => :main
 

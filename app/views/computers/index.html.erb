@@ -4,7 +4,7 @@
   <% for computer in @computers %>
     <li id="item_<%= computer.id -%>">
       <%=h computer.name %>
-      <%= link_to "Show", computer %>
+      <%= link_to "Prices", prices_computer_path(computer) %>
       <%= link_to "Edit", edit_computer_path(computer) %>
       <%= link_to "Destroy", computer, :confirm => 'Are you sure?', :method => :delete %>
     </li>

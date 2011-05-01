@@ -1,112 +1,95 @@
 <div id="div5" style="height: auto;" align="center";>
     <table width="805" cellspacing="0" cellpadding="0" border="0" class="four-border">
-        <tbody>
-            <tr>
-                <td>
-                    <table align="center" width="96%" cellspacing="2" cellpadding="2" border="0">
-                        <tbody>
-                            <tr>
-                            	<td rowspan="2">
-                            		<table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                        <tbody>
-                                            <tr>
-                                                <td valign="top">
-                                                    <table width="220" cellspacing="2" cellpadding="2" border="0">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td><br>
-                                                                	<%= f.date_select :collection_date, :start_year => Time.now.year , :end_year => Time.now.year + 1 %>
-                                                                    <select id="timedate" class="box" name="timedate">
-                                                                        <option selected="selected" value="">Select Date</option>
-                                                                        <option value="1302732000">14/04/2011</option>
-                                                                        <option value="1302818400">15/04/2011</option>
-                                                                        <option value="1303077600">18/04/2011</option>
-                                                                        <option value="1303164000">19/04/2011</option>
-                                                                        <option value="1303250400">20/04/2011</option>
-                                                                        <option value="1303336800">21/04/2011</option>
-                                                                        <option value="1303423200">22/04/2011</option>
-                                                                    </select>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                	<%= f.text_area :comment, :class => "box-wide", :rows => 5 %>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-								</td>
-                                <td colspan="3" valign="top" align="left" class="simple-text">
-                                    <div id="macboxyes" style="display:none;">
-                                        <p>
-                                            Nearly there. To finish you just need to pick a date convenient for you in the calender on the left. You will also need to accept our terms and conditions by checking the tickbox and then clicking "I Accept". Once you have accepted, you will receive a confirmation email with all your order's information in it. Our courier will bring a label with them unless you are instructed otherwise, so you will not need to print anything off.
-                                        </p>
-                                    </div>
-                                    <div id="macboxno">
-                                        <p>
-                                            Nearly there. To finish you just need to pick a date convenient for you in the calender on the left. You will also need to accept our terms and conditions by checking the tickbox and then clicking "I Accept". Once you have accepted, you will receive a confirmation email and a second email with the tracking number of the box we will send for you to place your Mac in. This will arrive on the day you selected. All you will need to do is place your Mac inside securely, affix the enclosed return shipping label to the item and hand it to the courier.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-							<tr>
-									<td colspan="2" class="footer-text">
-									&nbsp;&nbsp;<%= f.check_box :confirmation %>I confirm that the information I have provided, to the best of my knowledge, is accurate and true. 
-                                </td>
-								</tr>
-                            <tr>
-                                <td colspan="3" align="left" class="simple-text">
+        <tr>
+            <td>
+                <table align="center" width="96%" cellspacing="2" cellpadding="2" border="0">
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tr>
+                                        <td valign="top">
+                                            <table width="220" cellspacing="2" cellpadding="2" border="0">
+                                                <tr>
+                                                    <td>
+                                                        <%= f.date_select :collection_date, :start_year => Time.now.year , :end_year => Time.now.year + 1, 
+																		  :start_month => Time.now,
+																		  :order => [:day, :month, :year] %>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <%= f.text_area :comment, :class => "box-wide", :rows => 5 %>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td colspan="3" valign="top" align="left" class="simple-text">
+                                <div id="macboxyes" style="display:none;">
                                     <p>
-                                    	<strong>
-                                        Please note: We only issue payment by the following methods:
-                                            <br>
-                                        </strong>
+                                        Nearly there. To finish you just need to pick a date convenient for you in the calender on the left. You will also need to accept our terms and conditions by checking the tickbox and then clicking "I Accept". Once you have accepted, you will receive a confirmation email with all your order's information in it. Our courier will bring a label with them unless you are instructed otherwise, so you will not need to print anything off.
                                     </p>
-                                    
-                                        <strong>Direct Bank Transfer - We will need your Sort Code and Bank Account Number to pay you this way.</strong>
-                                    
-                                    <strong>
+                                </div>
+                                <div id="macboxno">
+                                    <p>
+                                        Nearly there. To finish you just need to pick a date convenient for you in the calender on the left. You will also need to accept our terms and conditions by checking the tickbox and then clicking "I Accept". Once you have accepted, you will receive a confirmation email and a second email with the tracking number of the box we will send for you to place your Mac in. This will arrive on the day you selected. All you will need to do is place your Mac inside securely, affix the enclosed return shipping label to the item and hand it to the courier.
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="footer-text">
+                                &nbsp;&nbsp;<%= f.check_box :confirmation %>I confirm that the information I have provided, to the best of my knowledge, is accurate and true. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="left" class="simple-text">
+                                <p>
+                                    <strong>Please note: We only issue payment by the following methods:
                                         <br>
                                     </strong>
-                                    
-                                        <strong>Paypal Transfer - We will need the email address that you are registered to PayPal with to pay you this way.</strong>
-                                    
-                                    <strong>
-                                        <br>
-										<br>
-                                        You will be contacted upon receipt of your Mac regarding your preferred payment method.
-                                    </strong>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                	&nbsp;
-                                </td>
-								<td colspan="3" align="left" class="footer-text">
-                                	&nbsp;&nbsp;<%= f.check_box :iagree, :tabindex => 9, :class => "footer-text" %>
-                                    I agree to the <%= link_to_function "terms and conditions", terms_and_conditions, {:style => "underline"} %>
-                                    of this contract
-                                </td>
-                            </tr>
-						</tbody>
-                    </table>				
-                    <table width="801">
-					        <tr>
-                                <td align="left">
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["payment_body"], :expand => "location_body")%>
-                                </td>
-								<td align="right">
-									<%= link_to_function image_tag("i_accept_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["payment_body"], :expand => "location_body")%>
-                                	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								</td>	
-                            </tr>
-                    </table>    
-                </td>
-            </tr>
-        </tbody>
+                                </p>
+                                <strong>Direct Bank Transfer - We will need your Sort Code and Bank Account Number to pay you this way.</strong>
+                                <strong>
+                                    <br>
+                                </strong>
+                                <strong>Paypal Transfer - We will need the email address that you are registered to PayPal with to pay you this way.</strong>
+                                <strong>
+                                    <br>
+                                    <br>
+                                    You will be contacted upon receipt of your Mac regarding your preferred payment method.
+                                </strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td colspan="3" align="left" class="footer-text">
+                                &nbsp;&nbsp;<%= f.check_box :iagree, :tabindex => 9, :class => "footer-text" %>
+                                I agree to the <%= link_to_function "terms and conditions", terms_and_conditions, {:style => "underline"} %>
+                                of this contract
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table width="801">
+                    <tr>
+                        <td align="left">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["payment_body"], :expand => "location_body") %>
+                        </td>
+                        <td align="right">
+                            <%= link_to_remote image_tag("i_accept_button.jpg", :size => "285x36", :border => "0"), :url => {:action => "submit_quote"}, 
+										:with => "Form.serialize($('new_quote'))" + " + '&quote[stage]=payment'",
+										:success => shuffle(:contract => ["payment_body"], :expand => "goodbye") %>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
     </table>
 </div>
