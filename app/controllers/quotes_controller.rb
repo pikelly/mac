@@ -10,7 +10,7 @@ class QuotesController < ApplicationController
 
   def new
     @computer = Computer.first
-    @quote = Quote.new :computer => @computer, :comment => "Additional shipping information"
+    @quote = Quote.new :computer => @computer, :comment => "Additional shipping information", :collection_date => 1.day.from_now
   end
 
   def create
