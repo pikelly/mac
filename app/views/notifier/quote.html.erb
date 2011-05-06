@@ -5,8 +5,9 @@
 		<title>New Quote</title>
 	</head>
 	<body>
+		<div align="center">
 		A new quote has been received
-		<table>
+		<table align="center">
 			<tr>
 				<td>
 					type: <%= @quote.computer.name %>
@@ -14,30 +15,75 @@
 			</tr>
 			<tr>
 				<td>
-					Ram: <%= @quote.computer.name %>
+					Speed: <%= @quote.processor %>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Disk: <%= @quote.computer.name %>
+					Ram: <%= @quote.ram %>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Condition: <%= @quote.computer.name %>
+					Disk: <%= @quote.disk %>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					type: <%= @quote.computer.name %>
+					Grade: <%= @quote.grade %>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Seller: <%= @quote.name %>
+					Boxed: <%= @quote.box %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Seller's Name: <%= @quote.name %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					House Name or Number: <%= @quote.houseid %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Street Name: <%= @quote.road %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					City: <%= @quote.city %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Post Code: <%= @quote.postcode %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Telephone Number: <%= @quote.phone %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Email Address: <%= @quote.email %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Date of collection: <%= @quote.date %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Additional Details: <%= @quote.comment %>
 				</td>
 			</tr>
 		</table>
+		</div>
 	</body>
-	<! You fill in the rest of this email rupert >
 </html>
