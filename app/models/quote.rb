@@ -34,8 +34,8 @@ class Quote < ActiveRecord::Base
     dp = DiskPrice.find_by_disk_id_and_computer_id(@disk.id, @computer.id).value || 0
     price = pp + rp + dp
     
-    price  = price - (price * eval("computer.#{grade.name.match(/(.)$/)[1].downcase}").to_i)/100 
-    price
+    price  = price - (price * eval("computer.#{grade.name.match(/(.)$/)[1].downcase}").to_i)/100 + (box ? 5 : 0)
+    "#{price}.00"
   end
 
   private
