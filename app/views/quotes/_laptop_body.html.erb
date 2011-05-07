@@ -25,9 +25,9 @@
                             <td align="center" width="23%">
                             </td>
                             <td align="center" width="49%">
-                                <center>
+                                <div style="text-align: center;">
                             	<%= image_tag "#{@computer.image_name}.jpg", :id => "photo" -%>
-                                </center>
+                                </div>
                             </td>
                             <td align="center" width="28%">
                                 &nbsp;
@@ -77,11 +77,11 @@
                             </tr>
 							<tr>	
 								<td align="left" width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a class="grade-text" onclick="javascript:window.open()" href="#">
+                                                <a class="grade-text" onclick="window.open()" href="#">
                                                         
-													<u>
+													<span style="text-decoration: underline;">
 														About grading
-                                                    </u>
+                                                    </span>
                                                 </a>
 									
 								</td>		
@@ -92,9 +92,9 @@
 							<tr>	
                                 <td align="left" width="50%">
                                                 <a class="grade-text" onclick="window.open('<%= how_to_find_quotes_path -%>', 'How to find this information', directories=0, toolbar=0)" href="#">
-                                                    <u>
+                                                    <span style="text-decoration: underline;">
                                                         How to find this information
-                                                    </u>
+                                                    </span>
                                                 </a>
                                 </td>
 								<td valign="top" class="form-text">

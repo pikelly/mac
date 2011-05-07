@@ -2,9 +2,9 @@ class Computer < ActiveRecord::Base
   
   #has_and_belongs_to_many :disks
   has_and_belongs_to_many :grades
-  has_and_belongs_to_many :old_processors, :table_name => "computers_processors", :class_name => "Processor"
-  has_and_belongs_to_many :old_rams,       :table_name => "computers_rams",       :class_name => "Ram"
-  has_and_belongs_to_many :old_disks,      :table_name => "computers_disks",      :class_name => "Disk"
+  has_and_belongs_to_many :old_processors, :class_name => "Processor"
+  has_and_belongs_to_many :old_rams,       :class_name => "Ram"
+  has_and_belongs_to_many :old_disks,      :class_name => "Disk"
   has_many :quotes
 
   has_many :prices

@@ -13,14 +13,14 @@ class Quote < ActiveRecord::Base
   validates_presence_of :disk, :message => "selection is required", :if => Proc.new {|q| ["details", "location", "payment"].include? q.stage}
   validates_presence_of :ram, :grade, :processor, :if => Proc.new {|q| ["details", "location", "payment"].include? q.stage}
   
-  validates_format_of :name, :with => /^[\s\w]+$/,       :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
-  validates_format_of :serialno, :with => /^[\w\d]+$/,   :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
-  validates_format_of :houseid, :with => /^[\s\w\d]+$/,  :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
-  validates_format_of :email, :with => /^[\w\d\.@]+$/,   :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
-  validates_format_of :road, :with => /^[\s\w]+$/,       :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
-  validates_format_of :city, :with => /^[\s\w]+$/,       :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
-  validates_format_of :postcode, :with => /^[\d\w]+$/,   :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
-  validates_format_of :phone, :with => /^[\d\(\)\s]+$/,  :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :name,      :with => /^[\s\w]+$/,     :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :serialno,  :with => /^[\w\d]+$/,     :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :houseid,   :with => /^[\s\w\d]+$/,   :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :email,     :with => /^[\w\d\.@]+$/,  :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :road,      :with => /^[\s\w]+$/,     :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :city,      :with => /^[\s\w]+$/,     :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :postcode,  :with => /^[\d\w]+$/,     :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :phone,     :with => /^[\d\(\)\s]+$/, :message => "appears to be incorrect", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
   
   validates_numericality_of :confirmation, :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
   validates_numericality_of :iagree,       :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
@@ -34,7 +34,7 @@ class Quote < ActiveRecord::Base
     dp = DiskPrice.find_by_disk_id_and_computer_id(@disk.id, @computer.id).value || 0
     price = pp + rp + dp
     
-    price  = price - (price * eval("computer.#{grade.name.match(/(.)$/)[1].downcase}").to_i)/100 + (box ? 5 : 0)
+    price  = price - (price * eval("computer.#{grade.name.match(/(.)$/)[1].downcase}").to_i)/100 + (box? ? 5 : 0)
     "#{price}.00"
   end
 
