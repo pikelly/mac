@@ -1,5 +1,5 @@
 class Disk < ActiveRecord::Base
-  attr_accessible :name, :speed
+  attr_accessible :name, :size
   
   #has_and_belongs_to_many :computers
   has_many :disk_prices, :dependent => :destroy

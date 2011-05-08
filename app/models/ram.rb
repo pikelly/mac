@@ -10,7 +10,7 @@ class Ram < ActiveRecord::Base
   default_scope :order => "position"
 
   before_validation :strip_name
-  validates_numericality_of :speed, :only_integer => true
+  validates_numericality_of :size, :only_integer => true
 
   def <=> other
     self.name <=> other.name

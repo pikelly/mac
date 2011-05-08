@@ -22,8 +22,6 @@ class Quote < ActiveRecord::Base
   validates_format_of :serialno, :with => /^[\w\d\s]+$/,   :message => "- Please enter the serial number as seen in the Apple syeatem profiler.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
   validates_format_of :email,    :with => /^[\w\d\.@]+$/,   :message => "- Please enter a valid email address.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
   
-  
-  
   validates_numericality_of :confirmation, :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
   validates_numericality_of :iagree,       :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
   
@@ -36,8 +34,8 @@ class Quote < ActiveRecord::Base
     dp = DiskPrice.find_by_disk_id_and_computer_id(@disk.id, @computer.id).value || 0
     price = pp + rp + dp
     
-    price  = price - (price * eval("computer.#{grade.name.match(/(.)$/)[1].downcase}").to_i)/100 
-    price
+    price  = price - (price * eval("computer.#{grade.name.match(/(.)$/)[1].downcase}").to_i)/100 + (box? ? 5 : 0)
+    "#{price}.00"
   end
 
   private

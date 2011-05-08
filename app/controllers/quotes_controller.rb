@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-  skip_before_filter :require_login, :only => :new
+  skip_before_filter :login_required, :only => :new
   def index
     @quotes = Quote.all
   end
@@ -10,7 +10,7 @@ class QuotesController < ApplicationController
 
   def new
     @computer = Computer.first
-    @quote = Quote.new :computer => @computer, :comment => "Additional shipping information"
+    @quote = Quote.new :computer => @computer, :comment => "Additional shipping information", :collection_date => 1.day.from_now
   end
 
   def create
@@ -54,7 +54,6 @@ class QuotesController < ApplicationController
       render :update do |page|
         page.replace_html "worth_value", @value
       end
-      return
     else
       report_errors
     end
@@ -63,7 +62,6 @@ class QuotesController < ApplicationController
     @quote = Quote.new params[:quote]
     if @quote.valid?
       head 200
-      return
     else
       report_errors
     end
@@ -74,7 +72,6 @@ class QuotesController < ApplicationController
       mail = Notifier.create_quote @quote
       status = Notifier.deliver(mail)
       head 200
-      return
     else
       report_errors
     end    
