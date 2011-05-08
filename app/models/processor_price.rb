@@ -6,7 +6,7 @@ class ProcessorPrice  < ActiveRecord::Base
   validates_numericality_of :value, :only_integer => true, :allow_nil => true
 
   def <=> other
-    self.processor.position <=> other.processor.position
+    processor.position <=> other.processor.position
   end
 
   def label

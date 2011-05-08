@@ -7,7 +7,7 @@ class DiskPrice  < ActiveRecord::Base
   default_scope :joins => [:disk], :order => 'disks.position'
 
   def <=> other
-    self.disk.position <=> other.disk.position
+    disk.position <=> other.disk.position
   end
 
   def label

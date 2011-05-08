@@ -6,7 +6,7 @@ class RamPrice  < ActiveRecord::Base
   validates_numericality_of :value, :only_integer => true, :allow_nil => true
 
   def <=> other
-    self.ram.position <=> other.ram.position
+    ram.position <=> other.ram.position
   end
 
   def label

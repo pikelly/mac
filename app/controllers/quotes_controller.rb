@@ -50,7 +50,7 @@ class QuotesController < ApplicationController
   
   def calculate
     @quote = Quote.new params[:quote]
-    if @value = @quote.calculate
+    if (@value = @quote.calculate)
       render :update do |page|
         page.replace_html "worth_value", @value
       end
