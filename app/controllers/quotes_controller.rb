@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-  skip_before_filter :login_required, :only => :new
+  skip_before_filter :login_required, :only => [:new, :calculate]
   def index
     @quotes = Quote.all
   end
