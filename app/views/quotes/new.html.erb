@@ -27,28 +27,32 @@
           It's that simple - Click now.
         </td>
       </tr>
-      <tr>
-        <td class="tab-bg">
-          <%= render "your_mac", :f => f %>
-        </td>
-      </tr>
-      <tr>
-        <td class="tab-bg">
-          <%= render "where_are_you", :f => f -%>
-        </td>
-      </tr>
-      <tr>
-        <td class="tab-bg">
-          <%= render "payment", :f => f -%>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div id="goodbye" style="display:none">
-            Thank you for your interest. We will be in touch soon.
-          </div>
-        </td>
-      </tr>
+      <%  if Pot.last.remainder < Pot.last.limit %>
+        <%= render "oversupply" %>
+      <% else %>
+          <tr>
+            <td class="tab-bg">
+              <%= render "your_mac", :f => f %>
+            </td>
+          </tr>
+          <tr>
+            <td class="tab-bg">
+              <%= render "where_are_you", :f => f -%>
+            </td>
+          </tr>
+          <tr>
+            <td class="tab-bg">
+              <%= render "payment", :f => f -%>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div id="goodbye" style="display:none">
+                Thank you for your interest. We will be in touch soon.
+              </div>
+            </td>
+          </tr>
+      <% end %>
       <tr>
         <td align="center" valign="top" class="bottom-links-text">
           <a class="bottom-links-text" onclick="window.open('<%= about_us_quotes_path -%>','about_us','width=720,height=880,scrollbars=yes')" href="#"><u>About

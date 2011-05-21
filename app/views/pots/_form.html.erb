@@ -1,0 +1,16 @@
+<% form_for @pot do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label "How much to put in the pot" %><br />
+    <%= f.text_field :value %>
+  </p>
+  <p>
+    <%= f.label "No longer offer to buy when the remainder is less than this" %><br />
+    <%= f.text_field :limit %>
+  </p>
+    <p>
+      <%= f.label "Remaining funds" %><br />
+      <%= f.text_field :remainder %>
+    </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

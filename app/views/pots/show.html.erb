@@ -1,0 +1,16 @@
+<% title "Pot" %>
+
+<p>
+  <strong>Value:</strong>
+  <%=h @pot.value %>
+</p>
+<p>
+  <strong>Limit:</strong>
+  <%=h @pot.limit %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_pot_path(@pot) %> |
+  <%= link_to "Destroy", @pot, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", pots_path %>
+</p>

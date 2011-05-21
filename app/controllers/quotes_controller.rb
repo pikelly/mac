@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-  skip_before_filter :login_required, :only => [:new, :calculate]
+  skip_before_filter :login_required, :only => [:new, :calculate, :show, :computer_changed, :calculate, :validate_quote, :submit_quote ]
   def index
     @quotes = Quote.all
   end
@@ -71,6 +71,9 @@ class QuotesController < ApplicationController
     if @quote.valid?
       mail = Notifier.create_quote @quote
       status = Notifier.deliver(mail)
+      pot = Pot.last
+      pot.remainder -= @quote.calculate
+      pot.save
       head 200
     else
       report_errors
