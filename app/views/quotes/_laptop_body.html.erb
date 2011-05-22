@@ -1,129 +1,129 @@
 <table>
-<tr>
-<td valign="top" >
-    <table width="801" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td valign="top">
+      <table width="801" cellspacing="0" cellpadding="0" border="0">
         <tbody>
-            <tr>
-                <td class="productimagetext" colspan="1">
-                    <strong>Please select your <span id="producttype">Laptop</span></strong>
+        <tr>
+          <td class="productimagetext" colspan="1">
+            <strong>Please select your <span id="producttype">Laptop</span></strong>
+          </td>
+          <td class="what-else-text" colspan="1">
+            <strong>What else is included?</strong>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <%= collection_select :quote, :computer_id, Computer.laptops, :id, :name, {}, {:class => "box-wide", :classname => "box-wide"} %>
+            <%= observe_field :quote_computer_id, :url => {:action => :computer_changed}, :with => "'id=' + value" -%>
+          </td>
+
+        </tr>
+        <tr>
+          <td width="42%">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td align="center" width="23%">
                 </td>
-				<td class="what-else-text" colspan="1">
-                    <strong>What else is included?</strong>
+                <td align="center" width="49%">
+                  <div style="text-align: center;">
+                    <%= image_tag "#{@computer.image_name}.jpg", :id => "photo" -%>
+                  </div>
                 </td>
-            </tr>
-            <tr>
-                <td align="center">
-                    <%= collection_select :quote, :computer_id, Computer.laptops, :id, :name, {}, {:class => "box-wide", :classname => "box-wide"} %>
-										<%= observe_field :quote_computer_id, :url => {:action => :computer_changed}, :with => "'id=' + value" -%>
+                <td align="center" width="28%">
+                  &nbsp;
                 </td>
-                
-            </tr>
-            <tr>
-                <td width="42%">
-                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                        <tr>
-                            <td align="center" width="23%">
-                            </td>
-                            <td align="center" width="49%">
-                                <div style="text-align: center;">
-                            	<%= image_tag "#{@computer.image_name}.jpg", :id => "photo" -%>
-                                </div>
-                            </td>
-                            <td align="center" width="28%">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="computer_name" align="center" class="heading" colspan="3">
-                           	  <%= @computer.name -%>
-                            </td>
-                        </tr>
-                    </table>
+              </tr>
+              <tr>
+                <td id="computer_name" align="center" class="heading" colspan="3">
+                  <%= @computer.name -%>
                 </td>
-                <td width="58%" valign="top">
-                    <table align="center" width="95%" cellspacing="2" cellpadding="2" border="0">
-                        <tbody>
-                            <tr>
-                                <td>
-                                  <%= collection_select :quote, :processor_id, @computer.processors, :id, :name, {:prompt => "Processor Speed"},{ :classname => "box", :class => "box"} -%>
-                                </td>
-								<td valign="top" class="form-text">
-                                    <%= f.check_box "box" %>Original Box 
-                                </td>
-							</tr>
-                            <tr>	
-                                <td>
-                                 	<%= collection_select :quote, :disk_id, @computer.disks, :id, :name, {:prompt => "Hard Disk size"},{ :class => "box", :classname => "box" } %>
-                                </td>
-								<td valign="top" class="form-text">
-                                    <%= f.check_box "adapter" %>Power Adapter
-                                </td>
-                            </tr>
-							<tr>
-                                <td>
-                                  <%= collection_select :quote, :ram_id, @computer.rams, :id, :name, {:prompt => "Ram installed"},{ :class => "box", :classname => "box" } %>
-                                </td>
-								<td valign="top" class="form-text">
-                                    <%= f.check_box "media" %>Original install disks
-                                </td>
-							</tr>
-                            <tr>	
-                                <td>
-                                  <%= collection_select :quote, :grade_id, Grade.all, :id, :name, {:prompt => "Its condition"}, {:class => "box", :classname => "box"} %>
-                                </td>
-								<td valign="top" class="form-text">
-                                    <%= f.check_box "manual" %>User Manuals
-                                </td>
-                            </tr>
-							<tr>	
-								<td align="left" width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a class="grade-text" onclick="window.open('<%= grading_quotes_path -%>', 'grading_definitions', 'directories=0, toolbar=0, width=720,height=680,scrollbars=1')" href="#">
+              </tr>
+            </table>
+          </td>
+          <td width="58%" valign="top">
+            <table align="center" width="95%" cellspacing="2" cellpadding="2" border="0">
+              <tbody>
+              <tr>
+                <td>
+                  <%= collection_select :quote, :processor_id, @computer.processors, :id, :name, {:prompt => "Processor Speed"}, {:classname => "box", :class => "box"} -%>
+                </td>
+                <td valign="top" class="form-text">
+                  <%= f.check_box "box" %>Original Box
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= collection_select :quote, :disk_id, @computer.disks, :id, :name, {:prompt => "Hard Disk size"}, {:class => "box", :classname => "box"} %>
+                </td>
+                <td valign="top" class="form-text">
+                  <%= f.check_box "adapter" %>Power Adapter
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= collection_select :quote, :ram_id, @computer.rams, :id, :name, {:prompt => "Ram installed"}, {:class => "box", :classname => "box"} %>
+                </td>
+                <td valign="top" class="form-text">
+                  <%= f.check_box "media" %>Original install disks
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= collection_select :quote, :grade_id, Grade.all, :id, :name, {:prompt => "Its condition"}, {:class => "box", :classname => "box"} %>
+                </td>
+                <td valign="top" class="form-text">
+                  <%= f.check_box "manual" %>User Manuals
+                </td>
+              </tr>
+              <tr>
+                <td align="left" width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a class="grade-text" onclick="window.open('<%= grading_quotes_path -%>', 'grading_definitions', 'directories=0, toolbar=0, width=720,height=680,scrollbars=1')" href="#">
                                                         
 													<span style="text-decoration: underline;">
 														About grading
                                                     </span>
-                                                </a>
-									
-								</td>		
-								<td valign="top" class="form-text">
-                                    <%= f.check_box "mouse" %>Mouse
-                                </td>
-                            </tr>
-							<tr>	
-                                <td align="left" width="50%">
-                                                <a class="grade-text" onclick="window.open('<%= how_to_find_quotes_path -%>', 'How_to_find_this_information', 'directories=0, toolbar=0, width=835,height=700,scrollbars=1')" href="#">
+                  </a>
+
+                </td>
+                <td valign="top" class="form-text">
+                  <%= f.check_box "mouse" %>Mouse
+                </td>
+              </tr>
+              <tr>
+                <td align="left" width="50%">
+                  <a class="grade-text" onclick="window.open('<%= how_to_find_quotes_path -%>', 'How_to_find_this_information', 'directories=0, toolbar=0, width=835,height=700,scrollbars=1')" href="#">
                                                     <span style="text-decoration: underline;">
                                                         How to find this information
                                                     </span>
-                                                </a>
-                                </td>
-								<td valign="top" class="form-text">
-                                    <%= f.check_box "keyboard" %>Keyboard
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="right" style="padding-right: 20px;" colspan="2">
-                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                        
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td valign="bottom">
-                                	 <%= link_to_function image_tag("glass-buttons-back-195.jpg", :border => "0"), shuffle(:contract => ["laptop_body"], :expand => "mac_body") -%>
-                                </td>
-                                <td>
-                                   <%= link_to_remote image_tag("worth_button.jpg", :border => "0"), :url => {:action => "calculate"}, 
-										:with => "Form.serialize($('new_quote'))" + " + '&quote[stage]=details'",
-                                        :success => shuffle(:contract => ["laptop_body"], :expand => ["worth_body"]) -%>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                  </a>
                 </td>
-            </tr>
+                <td valign="top" class="form-text">
+                  <%= f.check_box "keyboard" %>Keyboard
+                </td>
+              </tr>
+              <tr>
+                <td align="right" style="padding-right: 20px;" colspan="2">
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td valign="bottom">
+                  <%= link_to_function image_tag("glass-buttons-back-195.jpg", :border => "0"), shuffle(:contract => ["laptop_body"], :expand => "mac_body") -%>
+                </td>
+                <td>
+                  <%= link_to_remote image_tag("worth_button.jpg", :border => "0"), :url => {:action => "calculate"},
+                                     :with                                               => "Form.serialize($('new_quote'))" + " + '&quote[stage]=details'",
+                                     :success                                            => shuffle(:contract => ["laptop_body"], :expand => ["worth_body"]) -%>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
         </tbody>
-    </table>
-</td>
-</tr>
+      </table>
+    </td>
+  </tr>
 </table>

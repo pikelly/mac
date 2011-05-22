@@ -1,88 +1,90 @@
 <div id="div4" style="height: auto;" align="center;">
-    <table width="805" cellspacing="0" cellpadding="0" border="0">
-        <tbody>
-            <tr>
-                <td>
-                    <table align="center" width="95%" cellspacing="3" cellpadding="3" border="0">
-                        <tbody>
-                            <tr>
-                                <td width="15%" class="form-text">&nbsp;</td>
-                                <td width="31%" class="form-text">&nbsp;</td>
-                                <td width="24%" class="form-text">&nbsp;</td>
-                                <td width="30%" class="form-text">&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td class="form-text">Full Name</td>
-                                <td class="form-text">
-                                	<%= f.text_field :name, :tabindex => 1, :class => "box" %>
-                                </td>
-                                <td class="form-text">Your Mac’s Serial Number</td>
-                                <td class="form-text">
-                                  <%= f.text_field :serialno, :tabindex => 7, :class => "box "%>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="form-text">House Name/No.</td>
-                                <td class="form-text">
-                                  <label>
-                                    <%= f.text_field :houseid, :tabindex => 2, :class => "box" %>
-                                    </label>
-                                </td>
-                                <td class="form-text">Email Address</td>
-                                <td class="form-text">
-                                    <%= f.text_field :email, :tabindex => 8, :class => "box" %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="form-text">Road Name</td>
-                                <td class="form-text">
-                                    <%= f.text_field :road, :tabindex => 3, :class => "box" %>
-                                </td>
-                                <td class="footer-text" colspan="2" rowspan="2"><p>Please tick the box to confirm that you have suitable packaging for your Mac <br> (see our Terms and Conditions at bottom of page for more details)</p></td>
-                                
-                            </tr>
-                            <tr>
-                                <td class="form-text">City</td>
-                                <td class="form-text">
-                                    <%= f.text_field :city, :tabindex => 4, :class => "box" %>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td class="form-text">Post Code</td>
-                                <td class="form-text">
-                                  <%= f.text_field :postcode, :tabindex => 5, :class => "box "%>
-                                </td>
-                                <td class="footer-text" colspan="2">
-                                    <%= f.check_box :packaged, :tabindex => 9, :class => "form-text" %>
-                                    I confirm I have suitably packaged my Mac
-                                </td>
-								<%= observe_field "quote_packaged", :function => toggle_macbox %>
-							</tr>
-							<tr>
-								<td class="form-text">Telephone No.</td>
-                                <td class="form-text">
-                                    <%= f.text_field :phone, :tabindex => 6, :class => "box" %>
-                                </td>	
-                                
-							</tr>
-                            <tr>
-                                <td class="footer-text" colspan="2">
-                                	<%= link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["location_body"], :expand => "worth_body")%>
-                                </td>
-                                <td align="right" colspan="2">
-                                	<%= link_to_remote image_tag("continue_button.jpg", :size => "285x36", :border => "0"), :url => {:action => "validate_quote"}, 
-										:with => "Form.serialize($('new_quote'))" + " + '&quote[stage]=location'",
-                                        :success => shuffle(:contract => ["location_body"], :expand => ["payment_body"])%>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                
-            </tr>
-        </tbody>
-    </table>
+  <table width="805" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+    <tr>
+      <td>
+        <table align="center" width="95%" cellspacing="3" cellpadding="3" border="0">
+          <tbody>
+          <tr>
+            <td width="15%" class="form-text">&nbsp;</td>
+            <td width="31%" class="form-text">&nbsp;</td>
+            <td width="24%" class="form-text">&nbsp;</td>
+            <td width="30%" class="form-text">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="form-text">Full Name</td>
+            <td class="form-text">
+              <%= f.text_field :name, :tabindex => 1, :class => "box" %>
+            </td>
+            <td class="form-text">Your Mac’s Serial Number</td>
+            <td class="form-text">
+              <%= f.text_field :serialno, :tabindex => 7, :class => "box " %>
+            </td>
+          </tr>
+          <tr>
+            <td class="form-text">House Name/No.</td>
+            <td class="form-text">
+              <label>
+                <%= f.text_field :houseid, :tabindex => 2, :class => "box" %>
+              </label>
+            </td>
+            <td class="form-text">Email Address</td>
+            <td class="form-text">
+              <%= f.text_field :email, :tabindex => 8, :class => "box" %>
+            </td>
+          </tr>
+          <tr>
+            <td class="form-text">Road Name</td>
+            <td class="form-text">
+              <%= f.text_field :road, :tabindex => 3, :class => "box" %>
+            </td>
+            <td class="footer-text" colspan="2" rowspan="2">
+              <p>Please tick the box to confirm that you have suitable packaging for your Mac <br> (see our Terms and
+                Conditions at bottom of page for more details)</p></td>
+
+          </tr>
+          <tr>
+            <td class="form-text">City</td>
+            <td class="form-text">
+              <%= f.text_field :city, :tabindex => 4, :class => "box" %>
+            </td>
+
+          </tr>
+          <tr>
+            <td class="form-text">Post Code</td>
+            <td class="form-text">
+              <%= f.text_field :postcode, :tabindex => 5, :class => "box " %>
+            </td>
+            <td class="footer-text" colspan="2">
+              <%= f.check_box :packaged, :tabindex => 9, :class => "form-text" %>
+              I confirm I have suitably packaged my Mac
+            </td>
+            <%= observe_field "quote_packaged", :function => toggle_macbox %>
+          </tr>
+          <tr>
+            <td class="form-text">Telephone No.</td>
+            <td class="form-text">
+              <%= f.text_field :phone, :tabindex => 6, :class => "box" %>
+            </td>
+
+          </tr>
+          <tr>
+            <td class="footer-text" colspan="2">
+              <%= link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["location_body"], :expand => "worth_body") %>
+            </td>
+            <td align="right" colspan="2">
+              <%= link_to_remote image_tag("continue_button.jpg", :size => "285x36", :border => "0"), :url => {:action => "validate_quote"},
+                                 :with                                                                     => "Form.serialize($('new_quote'))" + " + '&quote[stage]=location'",
+                                 :success                                                                  => shuffle(:contract => ["location_body"], :expand => ["payment_body"]) %>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+
+    </tr>
+    </tbody>
+  </table>
 </div>

@@ -1,37 +1,37 @@
 <table>
-<tr>
-	<td valign="top" >
-    <table width="801" cellspacing="0" cellpadding="0" border="0">
-            <tr>                
-                <td colspan="3" align="center" class="your-mac-is-worth">
-                    	Your Mac Is Worth 
-				</td>
-			</tr>	
-			<tr>
-				<td width="38%" align="right">
-                	<%= image_tag "pound.jpg"%>
-                </td>
-				<td align="left" valign="top" width="62%" id="worth_value" class="valuation">nowt
-				</td>
-				
-			</tr>
-			<tr>	
-				<td colspan="3" align="center" class="your-mac-is-worth">
-						Would you like to accept and continue?
-				</td>
-			</tr>
-	</table>
-	<table width="801" cellspacing="0" cellpadding="0" border="0">
-			<tr>
-				<td align="left" width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<%= link_to_function image_tag("back_long_button.jpg", :size => "287x38", :border => "0"), shuffle(:contract => ["worth_body"], :expand => "laptop_body")%>
-				</td>
-				<td align="right" width="50%">
-					<%= link_to_function image_tag("continue_button.jpg", :size => "287x38", :border => "0"), shuffle(:contract => ["worth_body"], :expand => "location_body")%>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</td>
-			</tr>
-    </table>
-</td>
-</tr>
+  <tr>
+    <td valign="top">
+      <table width="801" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td colspan="3" align="center" class="your-mac-is-worth">
+            Your Mac Is Worth
+          </td>
+        </tr>
+        <tr>
+          <td width="38%" align="right">
+            <%= image_tag "pound.jpg" %>
+          </td>
+          <td align="left" valign="top" width="62%" id="worth_value" class="valuation">nowt
+          </td>
+
+        </tr>
+        <tr>
+          <td colspan="3" align="center" class="your-mac-is-worth">
+            Would you like to accept and continue?
+          </td>
+        </tr>
+      </table>
+      <table width="801" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td align="left" width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= link_to_function image_tag("back_long_button.jpg", :size => "287x38", :border => "0"), shuffle(:contract => ["worth_body"], :expand => "laptop_body") %>
+          </td>
+          <td align="right" width="50%">
+            <%= link_to_function image_tag("continue_button.jpg", :size => "287x38", :border => "0"), shuffle(:contract => ["worth_body"], :expand => "location_body") %>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 </table>
