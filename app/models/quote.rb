@@ -35,7 +35,11 @@ class Quote < ActiveRecord::Base
     price = pp + rp + dp
     
     price  = price - (price * eval("computer.#{grade.name.match(/(.)$/)[1].downcase}").to_i)/100 + (box? ? 5 : 0)
+    if price > computer.pot.limit
+      "capped"
+    else
     "#{price}.00"
+    end
   end
 
   private

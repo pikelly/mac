@@ -15,7 +15,7 @@ class PotsController < ApplicationController
     @pot = Pot.new(params[:pot])
     if @pot.save
       flash[:notice] = "Successfully created pot."
-      redirect_to @pot
+      redirect_to pots_url
     else
       render :action => 'new'
     end

@@ -1,5 +1,7 @@
 class Computer < ActiveRecord::Base
   
+  has_one :pot, :dependent => :destroy
+
   #has_and_belongs_to_many :disks
   has_and_belongs_to_many :grades
   has_and_belongs_to_many :old_processors, :class_name => "Processor"

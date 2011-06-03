@@ -1,6 +1,9 @@
 <% form_for @pot do |f| %>
   <%= f.error_messages %>
   <p>
+    <%= f.select :computer_id, Computer.all.map{|c| [ c.name, c.id ] }, :include_blank => "Select a model" %>
+  </p>
+  <p>
     <%= f.label "How much to put in the pot" %><br />
     <%= f.text_field :value %>
   </p>
