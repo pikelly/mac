@@ -12,9 +12,7 @@
                     <table width="220" cellspacing="2" cellpadding="2" border="0">
                       <tr>
                         <td>
-                          <%= f.date_select :collection_date, :start_year => Time.now.year, :end_year => Time.now.year + 1,
-                                            :start_month                  => Time.now,
-                                            :order                        => [:day, :month, :year] %>
+                          <%= date_selector %>
                         </td>
                       </tr>
                       <tr>

@@ -25,4 +25,16 @@ module QuotesHelper
       page.alert("The t&c<br>hello")
     end
   end
+  def date_selector
+    today = Time.now - 1.day
+    result = []
+    for index in 1..14
+      today += 1.day
+      while today.wday == 0 or today.wday == 6
+        today += 1.day
+      end
+      result << ["#{today.strftime("%A")} #{today.mday} #{today.strftime("%b")} #{today.year}", today]
+    end
+    select(@quote, :collection_date, result, {}, :id => "collection-date", :name => "quote[collection_date]")
+  end
 end

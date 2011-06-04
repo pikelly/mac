@@ -71,6 +71,7 @@ class QuotesController < ApplicationController
     end
   end
   def submit_quote
+    params[:quote][:collection_date] = Time.parse params[:quote][:collection_date]
     @quote = Quote.new params[:quote]
     if @quote.valid?
       mail = Notifier.create_quote @quote
