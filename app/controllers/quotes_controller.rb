@@ -61,6 +61,9 @@ class QuotesController < ApplicationController
     else
       report_errors
     end
+  rescue => e
+    @quote.errors.add_to_base e.message
+    report_errors
   end
   def validate_quote
     @quote = Quote.new params[:quote]
@@ -69,6 +72,9 @@ class QuotesController < ApplicationController
     else
       report_errors
     end
+  rescue => e
+    @quote.errors.add_to_base e.message
+    report_errors
   end
   def submit_quote
     params[:quote][:collection_date] = Time.parse params[:quote][:collection_date]
@@ -82,7 +88,10 @@ class QuotesController < ApplicationController
       head 200
     else
       report_errors
-    end    
+    end
+  rescue => e
+    @quote.errors.add_to_base e.message
+    report_errors
   end
   private
   def report_errors
