@@ -6,84 +6,84 @@
 </head>
 <body>
 		<div>
-		<div align="center">
-		  <h2><b>A new quote has been received</b>
+		<div>
+		  <h2><strong>A new quote has been received</strong>
 	      </h2>
 		</div>
-		<table width="903" height="566" align="left" cellpadding="3" cellspacing="5">
+		<table width="903" cellpadding="3" cellspacing="5">
 			<tr>
-			  <td width="200" valign="top"><div align="right">Type: </div></td>
-				<td width="372" valign="top">
-				<div align="left"><%= @quote.computer.name %> </div></td>
-				<td width="291" valign="top">&nbsp;</td>
+			  <td valign="top"><div>Type: </div></td>
+				<td valign="top">
+				<div><%= @quote.computer.name %> </div></td>
+				<td valign="top">&nbsp;</td>
 	      </tr>
 			<tr>
-			  <td valign="top"><div align="right">Speed: </div></td>
+			  <td valign="top"><div>Speed: </div></td>
 				<td valign="top">
-				<div align="left"><%= @quote.processor %></div></td>
+				<div><%= @quote.processor %></div></td>
 				<td rowspan="15" valign="top">&nbsp;</td>
 	      </tr>
 			<tr>
-			  <td valign="top"><div align="right">Ram: </div></td>
+			  <td valign="top"><div>Ram: </div></td>
 				<td valign="top">
-				<div align="left"><%= @quote.ram %></div></td>
+				<div><%= @quote.ram %></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Disk: </div></td>
+			  <td valign="top"><div>Disk: </div></td>
 				<td valign="top">
-				<div align="left"><%= @quote.disk %> </div></td>
+				<div><%= @quote.disk %> </div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Grade: </div></td>
+			  <td valign="top"><div>Grade: </div></td>
 				<td valign="top">
-				<div align="left"><%= @quote.grade %></div></td>
+				<div><%= @quote.grade %></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Boxed: </div></td>
+			  <td valign="top"><div>Boxed: </div></td>
 				<td valign="top">
-				<div align="left"><%= @quote.box %></div></td>
+				<div><%= @quote.box %></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Price Quoted</div></td>
-			  <td valign="top"><div align="left"><%= @quote.calculate -%></div></td>
+			  <td valign="top"><div>Price Quoted</div></td>
+			  <td valign="top"><div><%= @quote.calculate -%></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Seller's Name: </div></td>
-				<td valign="top"><div align="left"><%= @quote.name -%></div></td>
+			  <td valign="top"><div>Seller's Name: </div></td>
+				<td valign="top"><div><%= @quote.name -%></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">House Name or Number: </div></td>
-				<td valign="top"><div align="left"><%= @quote.houseid %></div></td>
+			  <td valign="top"><div>House Name or Number: </div></td>
+				<td valign="top"><div><%= @quote.houseid %></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Street Name: </div></td>
-				<td valign="top"><div align="left"><%= @quote.road %></div></td>
+			  <td valign="top"><div>Street Name: </div></td>
+				<td valign="top"><div><%= @quote.road %></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">City: </div></td>
-				<td valign="top"><div align="left"><%= @quote.city %></div></td>
+			  <td valign="top"><div>City: </div></td>
+				<td valign="top"><div><%= @quote.city %></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Post Code: </div></td>
-				<td valign="top"><div align="left"><%= @quote.postcode %></div></td>
+			  <td valign="top"><div>Post Code: </div></td>
+				<td valign="top"><div><%= @quote.postcode %></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Telephone Number: </div></td>
-				<td valign="top"><div align="left"><%= @quote.phone %></div></td>
+			  <td valign="top"><div>Telephone Number: </div></td>
+				<td valign="top"><div><%= @quote.phone %></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Email Address: </div></td>
-				<td valign="top"><div align="left"><%= @quote.email %></div></td>
+			  <td valign="top"><div>Email Address: </div></td>
+				<td valign="top"><div><%= @quote.email %></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Pickup Date: </div></td>
-				<td height="25" valign="top">
-				<div align="left"><%= @quote.collection_date %></div></td>
+			  <td valign="top"><div>Pickup Date: </div></td>
+				<td valign="top">
+				<div><%= @quote.collection_date %></div></td>
 		  </tr>
 			<tr>
-			  <td valign="top"><div align="right">Additional Details: </div></td>
-				<td height="136" valign="top">
-				<div align="left"><%= @quote.comment %></div></td>
+			  <td valign="top"><div>Additional Details: </div></td>
+				<td valign="top">
+				<div><%= @quote.comment %></div></td>
 		  </tr>
 		</table>
 </div>
