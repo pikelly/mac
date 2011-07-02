@@ -19,7 +19,7 @@ class Quote < ActiveRecord::Base
   validates_format_of :city,     :with => /^[\s\w]+$/,       :message => "- Please enter the name of your town or city.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
   validates_format_of :postcode, :with => /^[\d\w\s]+$/,   :message => "- Please enter a valid postcode.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
   validates_format_of :phone,    :with => /^[\d\(\)\s\+]+$/,  :message => "- Please enter a valid telephone number.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
-  validates_format_of :serialno, :with => /^[\w\d\s]+$/,   :message => "- Please enter the serial number as seen in the Apple syeatem profiler.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
+  validates_format_of :serialno, :with => /^[\w\d\s]+$/,   :message => "- Please enter the serial number as seen in the Apple system profiler.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
   validates_format_of :email,    :with => /^[\w\d\.@]+$/,   :message => "- Please enter a valid email address.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
   
   validates_numericality_of :confirmation, :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
