@@ -76,6 +76,12 @@ class QuotesController < ApplicationController
     @quote.errors.add_to_base e.message
     report_errors
   end
+
+  def contact
+    mail = Notifier.create_contact params[:contact]
+    Notifier.deliver(mail)
+  end
+
   def submit_quote
     params[:quote][:collection_date] = Time.parse params[:quote][:collection_date]
     @quote = Quote.new params[:quote]

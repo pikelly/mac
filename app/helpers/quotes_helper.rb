@@ -1,6 +1,11 @@
 module QuotesHelper
   def shuffle what
     update_page do |page|
+      if what[:expand][0] == "mac_body"
+        page << "document.forms[0].reset()"
+        page.replace :photo, :text => '<img alt="Macbook white" border="0" id="photo" name="photo" src="/images/Macbook White.jpg" width="320">'
+        page.replace_html :computer_name, :text => "Macbook White"
+      end
       for dom in what[:expand]
         page.visual_effect(:blind_down, dom)
       end if what[:expand]

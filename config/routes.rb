@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "home"
   map.resources :prices
 
-  map.resources :quotes, :collection => {:computer_changed => :get, :calculate => :post, :how_to_find => :get, :terms_and_conditions => :get, :submit_quote => :post, :grading => :get, :about_us => :get}
+  map.resources :quotes, :collection => {:contact => :post, :computer_changed => :get, :calculate => :post, :how_to_find => :get, :terms_and_conditions => :get, :submit_quote => :post, :grading => :get, :about_us => :get}
 
   map.resources :grades
 

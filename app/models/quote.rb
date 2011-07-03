@@ -28,6 +28,7 @@ class Quote < ActiveRecord::Base
   def calculate
     return false unless valid?
     return computer.e if grade.name == "Grade E"
+    return "capped" if computer.pot.nil?
     
     pp = ProcessorPrice.find_by_processor_id_and_computer_id(@processor.id, @computer.id).value || 0
     rp = RamPrice.find_by_ram_id_and_computer_id(@ram.id, @computer.id).value || 0

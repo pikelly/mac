@@ -16,7 +16,12 @@
         Monday - Friday 9AM-6PM
         so if you have any questions please feel free to call us.
 
-        If you prefer you can contact us via email any time using this web form and we will get back to you shortly.
+        If you prefer you can contact us via email any time using this web form and we will get back to you shortly but please ensure you leave an email address.
+        <% form_tag contact_quotes_path do %>
+            <%= text_area_tag "contact", nil, :size => "35x19" %>
+            <br/>
+            <%= submit_tag "Submit comment"%>
+        <% end  %>
       </td>
       <td width="294" align="center"><%= image_tag "britain.png" %>
       </td>
