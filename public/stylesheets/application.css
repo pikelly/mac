@@ -1,6 +1,6 @@
 body {
   background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -20,12 +20,11 @@ a {
 
 #container {
   width: 75%;
-  margin: 0 auto;
+  margin: 20px auto 0;
   background-color: #FFF;
   padding: 20px 40px;
   border: solid 1px black;
-  margin-top: 20px;
-}
+  }
 
 #flash_notice, #flash_error {
   padding: 5px 8px;
@@ -49,8 +48,7 @@ a {
 #errorExplanation {
   width: 400px;
   border: 2px solid #CF0000;
-  padding: 0px;
-  padding-bottom: 12px;
+  padding: 0 0 12px;
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
