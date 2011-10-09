@@ -10,7 +10,7 @@ class Quote < ActiveRecord::Base
   belongs_to :processor
   
   validates_presence_of :computer, :if => Proc.new {|q| ["details"].include? q.stage}
-  validates_presence_of :disk, :message => "selection is required", :if => Proc.new {|q| ["details", "location", "payment"].include? q.stage}
+  validates_presence_of :disk, :message => "can't be blank", :if => Proc.new {|q| ["details", "location", "payment"].include? q.stage}
   validates_presence_of :ram, :grade, :processor, :if => Proc.new {|q| ["details", "location", "payment"].include? q.stage}
   
   validates_format_of :name,     :with => /^[\s\w]+$/,       :message => "- Please enter your name.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
