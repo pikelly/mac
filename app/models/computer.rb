@@ -37,6 +37,10 @@ class Computer < ActiveRecord::Base
     name.gsub(/"/, "inch")
   end
 
+  def self.affordable
+    all.find_all{|c| c.pot and c.pot.remainder > c.pot.limit}
+  end
+
   private
   def strip_name
     self.name.strip!

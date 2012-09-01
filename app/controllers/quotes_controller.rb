@@ -10,7 +10,7 @@ class QuotesController < ApplicationController
   end
 
   def new
-    @computer = Computer.all.find{|c| c.pot and c.pot.remainder > c.pot.limit}
+    @computer = Computer.affordable.first
     @quote = Quote.new :computer => @computer, :comment => "Additional shipping information", :collection_date => 1.day.from_now
   end
 

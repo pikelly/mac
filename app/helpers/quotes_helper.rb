@@ -3,8 +3,11 @@ module QuotesHelper
     update_page do |page|
       if what[:expand][0] == "mac_body"
         page << "document.forms[0].reset()"
-        page.replace :photo, :text => '<img alt="Macbook white" border="0" id="photo" name="photo" src="/images/Macbook White.jpg" width="320">'
-        page.replace_html :computer_name, :text => "Macbook White"
+        page.replace :photo, :text => '<img alt="' + @computer.name + '" border="0" id="photo" name="photo" src="/images/' + @computer.image_name + '.jpg" width="320">'
+        page.replace "quote_processor_id", collection_select(:quote, :processor_id, @computer.processors, :id, :name, {:prompt => "Processor Speed"},{:class => "box", :classname => "box"})
+        page.replace "quote_disk_id", collection_select( :quote, :disk_id, @computer.disks, :id, :name, { :prompt => "Hard Disk size"},{ :class => "box", :classname => "box"})
+        page.replace "quote_ram_id", collection_select(:quote, :ram_id, @computer.rams, :id, :name, {:prompt => "Ram installed"}, {:class => "box", :classname => "box" })
+        page.replace_html :computer_name, :text => @computer.name
       end
       for dom in what[:expand]
         page.visual_effect(:blind_down, dom)
