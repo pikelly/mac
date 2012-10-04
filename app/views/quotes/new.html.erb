@@ -27,7 +27,7 @@
           It's that simple - Click now.
         </td>
       </tr>
-      <% unless Pot.all.find{|p| p.remainder > p.limit} %>
+      <% unless Pot.all.find{|p| p.remainder > p.cap} %>
           <%= render "oversupply" %>
       <% else %>
           <tr>

@@ -38,7 +38,7 @@ class Computer < ActiveRecord::Base
   end
 
   def self.affordable
-    all.find_all{|c| c.pot and c.pot.remainder > c.pot.limit}
+    all.find_all{|c| c.pot and c.pot.remainder > c.pot.cap}
   end
 
   private
