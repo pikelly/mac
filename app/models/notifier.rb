@@ -2,7 +2,7 @@ class Notifier < ActionMailer::Base
   @@target   = "rupertkelly@blueyonder.co.uk"
   @@defaults = {:from         => 'system@money4macs.co.uk',
                 :reply_to     => @@target,
-                :return_path  => {'return-path' => @@target},
+                :return_path  => @@target,
                 :content_type => "text/html",
                 :to           => @@target
   }

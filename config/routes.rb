@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => :quotes, :action => :new
   map.resources :pots
 
   map.resources :pots

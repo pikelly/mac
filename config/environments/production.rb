@@ -10,7 +10,7 @@ config.action_controller.perform_caching             = true
 config.action_view.cache_template_loading            = true
 
 # See everything in the log (default is :info)
-# config.log_level = :debug
+config.log_level = :debug
 
 # Use a different logger for distributed setups
 # config.logger = SyslogLogger.new
@@ -26,3 +26,11 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.smtp_settings = {:address => "91.208.99.47",
+                                      :user_name => "buyer@money4macs.co.uk",
+                                      :domain    => "money4macs.co.uk",
+                                      :password => "4t%gold4",
+                                      :authentication => :plain,
+                                      :enable_starttls_auto => true
+                                     }
