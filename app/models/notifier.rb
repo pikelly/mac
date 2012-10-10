@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  @@target   = "rupertkelly@blueyonder.co.uk"
+  @@target   = RAILS_ENV == "development" ? "paul.ian.kelly@gmail.com" : "rupertkelly@blueyonder.co.uk"
   @@defaults = {:from         => 'system@money4macs.co.uk',
                 :reply_to     => @@target,
                 :return_path  => @@target,
@@ -8,7 +8,8 @@ class Notifier < ActionMailer::Base
   }
 
   def quote quote
-    recipients   @@defaults[:to]
+    recipients   quote.email
+    bcc          @@defaults[:to]
     from         @@defaults[:from]
     subject      "New quote"
     reply_to     @@defaults[:return_path]
