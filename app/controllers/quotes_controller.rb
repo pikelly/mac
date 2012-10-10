@@ -90,7 +90,7 @@ class QuotesController < ApplicationController
       mail = Notifier.create_quote @quote
       status = Notifier.deliver(mail)
       pot = @quote.computer.pot
-      pot.remainder -= @quote.calculate
+      pot.remainder -= @quote.calculate.to_i
       pot.save
       head 200
     else
