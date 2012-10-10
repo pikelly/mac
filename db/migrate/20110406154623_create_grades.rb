@@ -11,10 +11,10 @@ class CreateGrades < ActiveRecord::Migration
     end
 
     value = 0
-    for grade in ["Grade A", "Grade B", "Grade C", "Grade D", "Grade E"]
-      Grade.create :name => grade, :value => value
-      value += 1
-    end
+    #for grade in ["Grade A", "Grade B", "Grade C", "Grade D", "Grade E"]
+    #  Grade.create :name => grade, :value => value
+    #  value += 1
+    #end
 
   end
 

@@ -10,9 +10,9 @@ class CreateRams < ActiveRecord::Migration
       t.references :ram
     end
     
-    for capacity in ['512MB', '1GB', '2GB', '3GB', '4GB'] do
-      Ram.create :name => capacity, :size => capacity.to_i
-    end
+    #for capacity in ['512MB', '1GB', '2GB', '3GB', '4GB'] do
+    #  Ram.create :name => capacity, :size => capacity.to_i
+    #end
 
 
   end

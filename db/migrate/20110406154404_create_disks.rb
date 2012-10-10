@@ -10,9 +10,9 @@ class CreateDisks < ActiveRecord::Migration
       t.references :computer
       t.references :disk
     end
-    for capacity in ['60GB', '80GB','100GB', '120GB', '160GB', '250GB', '500GB'] do
-      Disk.create :name => capacity, :size => capacity.to_i 
-    end
+    #for capacity in ['60GB', '80GB','100GB', '120GB', '160GB', '250GB', '500GB'] do
+    #  Disk.create :name => capacity, :size => capacity.to_i
+    #end
 
   end
 
