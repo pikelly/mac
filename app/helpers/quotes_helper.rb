@@ -34,7 +34,7 @@ module QuotesHelper
     end
   end
   def date_selector
-    today = Time.now - 1.day
+    today = Time.now
     result = []
     for index in 1..14
       today += 1.day
