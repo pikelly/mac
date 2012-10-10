@@ -265,3 +265,8 @@ outline: 0;
   text-decoration: none;
   font-variant: normal;
 }
+a:active, a:focus { 
+ outline: none; 
+ ie-dummy: expression(this.hideFocus=true);
+}
+
