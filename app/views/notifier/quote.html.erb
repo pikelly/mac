@@ -11,8 +11,10 @@
       <td width="43" align="center" valign="middle" class="left_gradient">&nbsp;</td>
       <td align="center" valign="middle" bgcolor="#FFFFFF"><table width="714" border="0" cellpadding="3" cellspacing="5">
         <tr>
-          <td colspan="2" align="left" valign="top"><span class="banner-logo">Money<span style="color:red">4</span>Macs.co.uk<br>
-            0780 0657487 </span></td>
+          <td colspan="2" align="left" valign="top">
+            <span class="banner-logo" onclick="document.forms[0].reset()">Money<span style="color:red">4</span>Macs.co.uk<br>
+                0780 0657487 </span>
+          </td>
         </tr>
         <tr>
           <td colspan="2" align="left" valign="top">We have received your offer to sell your Apple Mac to us. The full details are below. If there are any errors then please get in touch to let us know. </td>
@@ -25,71 +27,71 @@
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Type: </div></td>
-          <td width="73%" align="left" valign="top"><div>Macbook Pro 15 Inch Non Unibody</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.computer.name -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Speed: </div></td>
-          <td width="73%" align="left" valign="top"><div>2.2 GHz Core 2 Duo</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.processor.name -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Ram: </div></td>
-          <td width="73%" align="left" valign="top"><div>2 GB</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.ram.name -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Disk: </div></td>
-          <td width="73%" align="left" valign="top"><div>160GB</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.disk.name -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Grade: </div></td>
-          <td width="73%" align="left" valign="top"><div>Grade B</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.grade.name -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Boxed: </div></td>
-          <td width="73%" align="left" valign="top"><div>true</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.packaged -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Price Quoted</div></td>
-          <td width="73%" align="left" valign="top"><div>320.00</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.calculate %></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Seller's Name: </div></td>
-          <td width="73%" align="left" valign="top"><div>1</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.name -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>House Name or Number: </div></td>
-          <td width="73%" align="left" valign="top"><div>2</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.houseid -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Street Name: </div></td>
-          <td width="73%" align="left" valign="top"><div>3</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.road -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>City: </div></td>
-          <td width="73%" align="left" valign="top"><div>4</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.city -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Post Code: </div></td>
-          <td width="73%" align="left" valign="top"><div>5</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.postcode -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Telephone Number: </div></td>
-          <td width="73%" align="left" valign="top"><div>6</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.phone -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Mac's Serial Number: </div></td>
-          <td width="73%" align="left" valign="top"><div>7</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.serialno -%></div></td>
         </tr>
         <tr>
           <td width="27%" align="right" valign="top"><div>Email Address: </div></td>
-          <td width="73%" align="left" valign="top"><div>8</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.email -%></div></td>
         </tr>
         <tr>
           <td width="27%" height="22" align="right" valign="top"><div>Pickup Date: </div></td>
-          <td width="73%" align="left" valign="top"><div>2011-09-21 07:34:35 UTC</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.collection_date -%></div></td>
         </tr>
         <tr>
           <td width="27%" height="22" align="right" valign="top"><div>Additional Details: </div></td>
-          <td width="73%" align="left" valign="top"><div>Additional shipping information</div></td>
+          <td width="73%" align="left" valign="top"><div><%= @quote.comment -%></div></td>
         </tr>
         <tr>
           <td height="56" colspan="2" align="center" valign="bottom" class="spec_table">This is an automated email. Please do not reply to this email as the email address is not monitored.</td>
