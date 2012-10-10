@@ -21,10 +21,11 @@ class Quote < ActiveRecord::Base
   validates_format_of :phone,    :with => /^[\d\(\)\s\+]+$/,  :message => "- Please enter a valid telephone number.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
   validates_format_of :serialno, :with => /^[\w\d\s]+$/,   :message => "- Please enter the serial number as seen in the Apple system profiler.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
   validates_format_of :email,    :with => /^[\w\d\.@]+$/,   :message => "- Please enter a valid email address.", :if => Proc.new{|q| ["location", "payment"].include? q.stage}
-  
+
   validates_numericality_of :confirmation, :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
   validates_numericality_of :iagree,       :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
-  
+  validates_numericality_of :packaged,     :message => "You must package your computer", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
+
   def calculate
     return false unless valid?
     return computer.e if grade.name == "Grade E"

@@ -102,7 +102,11 @@ class QuotesController < ApplicationController
   end
   private
   def report_errors
-    err = @quote.errors.full_messages.map{|m| m.gsub(/Iagree is required/, "You must agree to the Terms and Conditions")}
+    err = @quote.errors.full_messages
+    err.each do |m|
+      m.gsub!(/Iagree is required.*/, "You must agree to the Terms and Conditions")
+      m.gsub!(/^Packaged.*/, "You must package your computer")
+    end
     flash[:error] = err
     flash.discard
     render :update, :status => 400 do |page|
