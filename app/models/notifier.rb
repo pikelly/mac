@@ -8,8 +8,8 @@ class Notifier < ActionMailer::Base
   }
 
   def quote quote
-    recipients   quote.email
-    bcc          @@defaults[:to]
+    recipients   [quote.email, @@defaults[:to]]
+    #bcc          @@defaults[:to]
     from         @@defaults[:from]
     subject      "New quote"
     reply_to     @@defaults[:return_path]
