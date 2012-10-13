@@ -1,7 +1,7 @@
 class Notifier < ActionMailer::Base
   @@target   = RAILS_ENV == "development" ? "paul.ian.kelly@gmail.com" : "rupertkelly@blueyonder.co.uk"
   @@defaults = {:from         => 'system@money4macs.co.uk',
-                :reply_to     => @@target,
+                :reply_to     => @@target, 
                 :return_path  => @@target,
                 :content_type => "text/html",
                 :to           => @@target
