@@ -24,7 +24,7 @@ class Quote < ActiveRecord::Base
 
   validates_numericality_of :confirmation, :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
   validates_numericality_of :iagree,       :message => "is required", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
-  validates_numericality_of :packaged,     :message => "You must package your computer", :equal_to => 1, :if => Proc.new{|q| ["payment"].include? q.stage}
+  validates_numericality_of :packaged,     :message => "You must package your computer", :equal_to => 1, :if => Proc.new{|q| ["location","payment"].include? q.stage}
 
   def calculate
     return false unless valid?
