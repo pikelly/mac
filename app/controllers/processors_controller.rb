@@ -30,13 +30,4 @@ class ProcessorsController < ApplicationController
     flash[:notice] = "Successfully destroyed processor."
     redirect_to processors_url
   end
-
-  def sort
-    for processor in @processors
-      processor.position = params["processor-list"].index(processor.id.to_s)+1
-      processor.save
-    end
-    head 200
-  end
-
 end

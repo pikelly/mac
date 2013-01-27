@@ -9,6 +9,16 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
   before_filter :login_required
+
+  def sort
+    kind = controller_name.singularize
+    for obj in instance_variable_get "@#{kind.pluralize}"
+      obj.position = params["#{kind}-list"].index(obj.id.to_s)+1
+      obj.save
+    end
+    head 200
+  end
+
   private
   def find_by_id
     kind = controller_name.singularize
@@ -19,4 +29,5 @@ class ApplicationController < ActionController::Base
     kinds = controller_name
     instance_variable_set "@#{kinds}", kinds.singularize.capitalize.constantize.all
   end
+
 end
