@@ -1,10 +1,7 @@
 class RamsController < ApplicationController
+  before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
   def index
     @rams = Ram.all
-  end
-
-  def show
-    @ram = Ram.find(params[:id])
   end
 
   def new
@@ -21,12 +18,7 @@ class RamsController < ApplicationController
     end
   end
 
-  def edit
-    @ram = Ram.find(params[:id])
-  end
-
   def update
-    @ram = Ram.find(params[:id])
     if @ram.update_attributes(params[:ram])
       flash[:notice] = "Successfully updated ram."
       redirect_to @ram
@@ -36,7 +28,6 @@ class RamsController < ApplicationController
   end
 
   def destroy
-    @ram = Ram.find(params[:id])
     @ram.destroy
     flash[:notice] = "Successfully destroyed ram."
     redirect_to rams_url

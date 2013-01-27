@@ -1,10 +1,8 @@
 class GradesController < ApplicationController
+  before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
+
   def index
     @grades = Grade.all
-  end
-
-  def show
-    @grade = Grade.find(params[:id])
   end
 
   def new
@@ -21,12 +19,7 @@ class GradesController < ApplicationController
     end
   end
 
-  def edit
-    @grade = Grade.find(params[:id])
-  end
-
   def update
-    @grade = Grade.find(params[:id])
     if @grade.update_attributes(params[:grade])
       flash[:notice] = "Successfully updated grade."
       redirect_to @grade
@@ -36,7 +29,6 @@ class GradesController < ApplicationController
   end
 
   def destroy
-    @grade = Grade.find(params[:id])
     @grade.destroy
     flash[:notice] = "Successfully destroyed grade."
     redirect_to grades_url

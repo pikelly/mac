@@ -1,10 +1,8 @@
 class ComputersController < ApplicationController
+  before_filter :find_by_id, :only => [:show, :edit, :prices, :update, :destroy]
+
   def index
     @computers = Computer.all
-  end
-
-  def show
-    @computer = Computer.find(params[:id])
   end
 
   def new
@@ -21,16 +19,7 @@ class ComputersController < ApplicationController
     end
   end
 
-  def edit
-    @computer = Computer.find(params[:id])
-  end
-
-  def prices
-    @computer = Computer.find(params[:id])
-  end
-
   def update
-    @computer = Computer.find(params[:id])
     if @computer.update_attributes(params[:computer])
       flash[:notice] = "Successfully updated computer."
       redirect_to @computer
@@ -40,7 +29,6 @@ class ComputersController < ApplicationController
   end
 
   def destroy
-    @computer = Computer.find(params[:id])
     @computer.destroy
     flash[:notice] = "Successfully destroyed computer."
     redirect_to computers_url
@@ -58,5 +46,5 @@ class ComputersController < ApplicationController
     end
     head 200
   end
-
+  private
 end

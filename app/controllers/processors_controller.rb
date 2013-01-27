@@ -1,10 +1,7 @@
 class ProcessorsController < ApplicationController
+  before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
   def index
     @processors = Processor.all
-  end
-
-  def show
-    @processor = Processor.find(params[:id])
   end
 
   def new
@@ -21,12 +18,7 @@ class ProcessorsController < ApplicationController
     end
   end
 
-  def edit
-    @processor = Processor.find(params[:id])
-  end
-
   def update
-    @processor = Processor.find(params[:id])
     if @processor.update_attributes(params[:processor])
       flash[:notice] = "Successfully updated processor."
       redirect_to @processor
@@ -36,7 +28,6 @@ class ProcessorsController < ApplicationController
   end
 
   def destroy
-    @processor = Processor.find(params[:id])
     @processor.destroy
     flash[:notice] = "Successfully destroyed processor."
     redirect_to processors_url

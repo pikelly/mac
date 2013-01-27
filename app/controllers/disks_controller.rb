@@ -1,10 +1,8 @@
 class DisksController < ApplicationController
+  before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
+
   def index
     @disks = Disk.all
-  end
-
-  def show
-    @disk = Disk.find(params[:id])
   end
 
   def new
@@ -21,12 +19,7 @@ class DisksController < ApplicationController
     end
   end
 
-  def edit
-    @disk = Disk.find(params[:id])
-  end
-
   def update
-    @disk = Disk.find(params[:id])
     if @disk.update_attributes(params[:disk])
       flash[:notice] = "Successfully updated disk."
       redirect_to @disk
@@ -36,7 +29,6 @@ class DisksController < ApplicationController
   end
 
   def destroy
-    @disk = Disk.find(params[:id])
     @disk.destroy
     flash[:notice] = "Successfully destroyed disk."
     redirect_to disks_url

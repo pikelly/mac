@@ -1,12 +1,9 @@
 class QuotesController < ApplicationController
+  before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
   skip_before_filter :login_required, :only => [:new, :calculate, :show, :computer_changed, :calculate, :validate_quote, :submit_quote,
                                                 :terms_and_conditions, :about_us, :grading, :how_to_find]
   def index
     @quotes = Quote.all
-  end
-
-  def show
-    @quote = Quote.find(params[:id])
   end
 
   def new
@@ -24,12 +21,7 @@ class QuotesController < ApplicationController
     end
   end
 
-  def edit
-    @quote = Quote.find(params[:id])
-  end
-
   def update
-    @quote = Quote.find(params[:id])
     if @quote.update_attributes(params[:quote])
       flash[:notice] = "Successfully updated quote."
       redirect_to @quote
@@ -39,7 +31,6 @@ class QuotesController < ApplicationController
   end
 
   def destroy
-    @quote = Quote.find(params[:id])
     @quote.destroy
     flash[:notice] = "Successfully destroyed quote."
     redirect_to quotes_url

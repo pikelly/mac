@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
   before_filter :login_required
+  private
+  def find_by_id
+    kind = controller_name.singularize
+    instance_variable_set "@#{kind}", kind.capitalize.constantize.find(params[:id])
+    true
+  end
 end

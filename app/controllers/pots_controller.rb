@@ -1,10 +1,7 @@
 class PotsController < ApplicationController
+  before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
   def index
     @pots = Pot.all
-  end
-  
-  def show
-    @pot = Pot.find(params[:id])
   end
   
   def new
@@ -21,12 +18,7 @@ class PotsController < ApplicationController
     end
   end
   
-  def edit
-    @pot = Pot.find(params[:id])
-  end
-  
   def update
-    @pot = Pot.find(params[:id])
     if @pot.update_attributes(params[:pot])
       flash[:notice] = "Successfully updated pot."
       redirect_to @pot
@@ -36,7 +28,6 @@ class PotsController < ApplicationController
   end
   
   def destroy
-    @pot = Pot.find(params[:id])
     @pot.destroy
     flash[:notice] = "Successfully destroyed pot."
     redirect_to pots_url

@@ -1,10 +1,7 @@
 class PricesController < ApplicationController
+  before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
   def index
     @prices = Price.all
-  end
-
-  def show
-    @price = Price.find(params[:id])
   end
 
   def new
@@ -21,12 +18,7 @@ class PricesController < ApplicationController
     end
   end
 
-  def edit
-    @price = Price.find(params[:id])
-  end
-
   def update
-    @price = Price.find(params[:id])
     if @price.update_attributes(params[:price])
       flash[:notice] = "Successfully updated price."
       redirect_to @price
@@ -36,7 +28,6 @@ class PricesController < ApplicationController
   end
 
   def destroy
-    @price = Price.find(params[:id])
     @price.destroy
     flash[:notice] = "Successfully destroyed price."
     redirect_to prices_url
