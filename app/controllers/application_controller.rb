@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
   def find_by_id
     kind = controller_name.singularize
     instance_variable_set "@#{kind}", kind.capitalize.constantize.find(params[:id])
-    true
+  end
+
+  def find_all
+    kinds = controller_name
+    instance_variable_set "@#{kinds}", kinds.singularize.capitalize.constantize.all
   end
 end

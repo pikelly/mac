@@ -1,8 +1,6 @@
 class RamsController < ApplicationController
   before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
-  def index
-    @rams = Ram.all
-  end
+  before_filter :find_all, :only => [:index, :sort]
 
   def new
     @ram = Ram.new
@@ -34,7 +32,6 @@ class RamsController < ApplicationController
   end
 
   def sort
-    @rams = Ram.all
     for ram in @rams
       ram.position = params["ram-list"].index(ram.id.to_s)+1
       ram.save

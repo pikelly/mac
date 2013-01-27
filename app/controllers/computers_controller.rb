@@ -1,9 +1,6 @@
 class ComputersController < ApplicationController
   before_filter :find_by_id, :only => [:show, :edit, :prices, :update, :destroy]
-
-  def index
-    @computers = Computer.all
-  end
+  before_filter :find_all, :only => [:index, :sort]
 
   def new
     @computer = Computer.new :laptop => true
@@ -39,7 +36,6 @@ class ComputersController < ApplicationController
   end
 
   def sort
-    @computers = Computer.all
     for computer in @computers
       computer.position = params["computer-list"].index(computer.id.to_s)+1
       computer.save

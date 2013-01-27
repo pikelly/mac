@@ -1,9 +1,6 @@
 class DisksController < ApplicationController
   before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
-
-  def index
-    @disks = Disk.all
-  end
+  before_filter :find_all, :only => [:index, :sort]
 
   def new
     @disk = Disk.new
@@ -35,7 +32,6 @@ class DisksController < ApplicationController
   end
 
   def sort
-    @disks = Disk.all
     for disk in @disks
       disk.position = params["disk-list"].index(disk.id.to_s)+1
       disk.save

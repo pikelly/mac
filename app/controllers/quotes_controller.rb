@@ -2,9 +2,7 @@ class QuotesController < ApplicationController
   before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
   skip_before_filter :login_required, :only => [:new, :calculate, :show, :computer_changed, :calculate, :validate_quote, :submit_quote,
                                                 :terms_and_conditions, :about_us, :grading, :how_to_find]
-  def index
-    @quotes = Quote.all
-  end
+  before_filter :find_all, :only => :index
 
   def new
     @computer = Computer.affordable.first

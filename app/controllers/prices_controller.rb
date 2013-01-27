@@ -1,8 +1,6 @@
 class PricesController < ApplicationController
   before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
-  def index
-    @prices = Price.all
-  end
+  before_filter :find_all, :only => :index
 
   def new
     @price = Price.new

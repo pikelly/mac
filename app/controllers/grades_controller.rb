@@ -1,9 +1,6 @@
 class GradesController < ApplicationController
   before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
-
-  def index
-    @grades = Grade.all
-  end
+  before_filter :find_all, :only => :index
 
   def new
     @grade = Grade.new

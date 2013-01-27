@@ -1,9 +1,6 @@
 class PotsController < ApplicationController
   before_filter :find_by_id, :only => [:show, :edit, :update, :destroy]
-  def index
-    @pots = Pot.all
-  end
-  
+  before_filter :find_all, :only => :index
   def new
     @pot = Pot.new
   end
