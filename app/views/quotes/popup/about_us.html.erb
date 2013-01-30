@@ -1,0 +1,46 @@
+<table class="banner-logo" align="center" width="690" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td class="banner-logo"> Money<span style="color:red">4</span>Macs.co.uk<br/>0117 939 6254
+    </td>
+  </tr>
+</table>
+<div align="center">
+  <table class="four-border" width="690" border="0" cellpadding="20">
+    <tr>
+      <td class="about-us-title" height="78" colspan="2" align="center"> Money4Macs.co.uk is a UK business based in
+        Bristol.
+      </td>
+    </tr>
+    <tr>
+      <td class="simple-text" valign="top">We are available by telephone
+        Monday - Friday 9AM-6PM
+        so if you have any questions please feel free to call us.
+
+        If you prefer you can contact us via email any time using this web form and we will get back to you shortly but please ensure you leave an email address.
+        <% form_tag contact_quotes_path do %>
+            <%= text_area_tag "contact", nil, :size => "35x19" %>
+            <br/>
+            <%= submit_tag "Submit comment"%>
+        <% end  %>
+      </td>
+      <td width="294" align="center"><%= image_tag "britain.png" %>
+      </td>
+    </tr>
+    <tr class="simple-text">
+      <td colspan="2">
+        <span style="color:red">Our premises insurance policy specifically states that we cannot allow customers
+          onto our premises without prior arrangements. Please call us in advance if you require a pass to visit our
+          premises. You are welcome to come and see us but there is strictly no admittance without prior
+          notification.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="trading-as-footer" valign="top">
+        Money4Macs & Money4Macs.co.uk are trading as names of Laptops to go Ltd, UK registered business 6287597.
+        <br>
+        We also trade under the name of The Apple Shack and have an Apple parts web site - <a href="http://www.theappleshack.co.uk">www.theappleshack.co.uk</a>
+        and a long established Ebay store where we are top rated sellers with excellent feedback. You can read out Ebay feedback here <a href="http://feedback.ebay.co.uk/ws/eBayISAPI.dll?ViewFeedback2&userid=theappleshackcouk">Ebay feedback profile</a>
+      </td>
+    </tr>
+  </table>
+</div>

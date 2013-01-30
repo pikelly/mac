@@ -89,6 +89,10 @@ class QuotesController < ApplicationController
     @quote.errors.add_to_base e.message
     report_errors
   end
+  def about_us;             render 'quotes/popup/about_us'             end
+  def how_to_find;          render 'quotes/popup/how_to_find'          end
+  def terms_and_conditions; render 'quotes/popup/terms_and_conditions' end
+  def grading;              render 'quotes/popup/grading'              end
   private
   def report_errors
     err = @quote.errors.full_messages
