@@ -10,61 +10,41 @@
               %td
                 %table(align="center" width="95%" cellspacing="3" cellpadding="3" border="0")
                   %tr
-                    %td.form-text(width="15%")
-                      &nbsp;
-                    %td.form-text(width="31%")
-                      &nbsp;
-                    %td.form-text(width="24%")
-                      &nbsp;
-                    %td.form-text(width="30%")
-                      &nbsp;
+                    %td.form-text(width="15%") &nbsp;
+                    %td.form-text(width="31%") &nbsp;
+                    %td.form-text(width="24%") &nbsp;
+                    %td.form-text(width="30%") &nbsp;
                   %tr
-                    %td.form-text
-                      Full Name
-                    %td.form-text
-                      = f.text_field :name, :tabindex => 1, :class => "box"
-                    %td.form-text
-                      Your Mac's Serial Number
-                    %td.form-text
-                      = f.text_field :serialno, :tabindex => 7, :class => "box "
+                    %td.form-text  Full Name
+                    %td.form-text= f.text_field :name, :tabindex => 1, :class => "box"
+                    %td.form-text  Your Mac's Serial Number
+                    %td.form-text= f.text_field :serialno, :tabindex => 7, :class => "box "
                   %tr
+                    %td.form-text House Name/No.
                     %td.form-text
-                      House Name/No.
-                    %td.form-text
-                      %label
-                        = f.text_field :houseid, :tabindex => 2, :class => "box"
-                    %td.form-text
-                      Email Address
-                    %td.form-text
-                      = f.text_field :email, :tabindex => 8, :class => "box"
+                      %label= f.text_field :houseid, :tabindex => 2, :class => "box"
+                    %td.form-text  Email Address
+                    %td.form-text= f.text_field :email, :tabindex => 8, :class => "box"
                   %tr
-                    %td.form-text
-                      Road Name
-                    %td.form-text
-                      = f.text_field :road, :tabindex => 3, :class => "box"
+                    %td.form-text  Road Name
+                    %td.form-text= f.text_field :road, :tabindex => 3, :class => "box"
                     %td.footer-text{:colspan => "2", :rowspan => "2"}
                       %p
                         Please tick the box to confirm that you have suitable packaging for your Mac <br> (see our Terms and
                         Conditions at bottom of page for more details)
                   %tr
-                    %td.form-text
-                      City
-                    %td.form-text
-                      = f.text_field :city, :tabindex => 4, :class => "box"
+                    %td.form-text  City
+                    %td.form-text= f.text_field :city, :tabindex => 4, :class => "box"
                   %tr
-                    %td.form-text
-                      Post Code
-                    %td.form-text
-                      = f.text_field :postcode, :tabindex => 5, :class => "box "
+                    %td.form-text  Post Code
+                    %td.form-text= f.text_field :postcode, :tabindex => 5, :class => "box "
                     %td.footer-text{:colspan => "2"}
                       = f.check_box :packaged, :tabindex => 9, :class => "form-text"
                       I confirm I have suitably packaged my Mac
                     = observe_field "quote_packaged", :function => toggle_macbox
                   %tr
-                    %td.form-text
-                      Telephone No.
-                    %td.form-text
-                      = f.text_field :phone, :tabindex => 6, :class => "box"
+                    %td.form-text  Telephone No.
+                    %td.form-text= f.text_field :phone, :tabindex => 6, :class => "box"
                   %tr
                     %td.footer-text{:colspan => "2"}
                       = link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["your_collection_address_body"], :expand => "worth_body")

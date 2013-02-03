@@ -1,7 +1,7 @@
 %table(cellspacing="0" cellpadding="0" border="0" width="100%")
   %tr
     %td
-      .tab-text#mac_header
+      #mac_header.tab-text
         = link_to_function "1 - Details Of Your Mac " + "&nbsp; " * 42, shuffle(:expand =>["mac_body"], :contract => ["payment_body", "laptop_body", "desktop_body", "worth_body", "your_collection_address_body", "payment_body"]),  {:class => "tab-text1"}
       #mac_body{:style => "display:none"}
         = render("mac_type", :f => f)
