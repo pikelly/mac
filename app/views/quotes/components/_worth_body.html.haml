@@ -1,19 +1,19 @@
 %table
   %tr
-    %td{:valign => "top"}
-      %table(width="801" cellspacing="0" cellpadding="0" border="0")
+    %td.top
+      %table.clean(width="801" cellpadding="0")
         %tr
           %td.your-mac-is-worth{:colspan => "3", :align => "center"}
             Your Mac Is Worth
         %tr
           %td{:width => "38%", :align => "right"}
             = image_tag "pound.jpg"
-          %td.valuation#worth_value{:align => "left", :valign => "top", :width => "%62"}
+          %td.valuation.top#worth_value{:align => "left", :width => "%62"}
             Nowt
         %tr
           %td.your-mac-is-worth{:align => "center", :colspan => "3"}
             Would you like to accept and continue?
-      %table(width="801" cellspacing="0" cellpadding="0" border="0")
+      %table.clean(width="801" cellpadding="0")
         %tr
           %td{:align => "left", :width => "50%"}
             = link_to_function(image_tag("back_long_button.jpg", :size => "287x38", :border => "0", :style => "margin-left: 20px;"), shuffle(:contract => ["worth_body"], :expand => "laptop_body"))

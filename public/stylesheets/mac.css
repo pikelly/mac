@@ -269,4 +269,19 @@ a:active, a:focus {
  outline: none; 
  ie-dummy: expression(this.hideFocus=true);
 }
-
+table.clean {
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+.top {
+ vertical-align: top;
+}
+.bottom {
+ vertical-align: bottom;
+}
+.hidden{
+ display: none;
+}
+.shown{
+ display: inline;
+}

@@ -1,11 +1,11 @@
 = javascript('ga_loader')
 - form_for @quote do |f|
-  %table.banner-logo(align="center" width="811" cellspacing="0" cellpadding="0" border="0")
+  %table.banner-logo.clean(align="center" width="811" cellpadding = "0")
     %tr
       %td.banner-logo
         Money<span style="color:red;">4</span>Macs.co.uk<br>
-        0117 939 5254
-  %table.four-border{:align => "center", :width => "811", :cellspacing => "0", :cellpadding => "0", :border => "0"}
+        0117 939 6254
+  %table.four-border.clean{:align => "center", :width => "811", :cellpadding => "0"}
     %tr
       %td.offer-text
         In these tough financial times are you in need of<br>
@@ -37,13 +37,13 @@
           = render "quotes/components/payment", :f => f
       %tr
         %td
-          .goodbye{:style => "display:none;"}
+          .goodbye{:style => "display: none;"}
             Thank you for your interest. We will be in touch soon.
     %table.footer-text{:align => "center"}
       %tr
         %br/
         %br/
-        %td{:align => :center, :valign => "top"}
+        %td.top{:align => :center}
           %a.bottom-links-text{:href => "#", :style => "text-decoration:underline;", :onclick => "window.open('#{about_us_quotes_path}',            'about_us',            'width=720,height=894,scrollbars=yes')"}
             About Us
           &nbsp;
