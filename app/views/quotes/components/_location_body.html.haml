@@ -1,9 +1,9 @@
 %table(cellspacing="0" cellpadding="0" border="0" width="100%")
   %tr
     %td
-      #your_collection_address_header.tab-text
+      #location_header.tab-text
         2 - Your Collection Address
-      #your_collection_address_body{:style => "display:none;"}
+      #location_body{:style => "display:none;"}
         #div4{:style => "height:auto;", :align => "center;"}
           %table(width="805" cellspacing="0" cellpadding="0" border="0")
             %tr
@@ -47,8 +47,8 @@
                     %td.form-text= f.text_field :phone, :tabindex => 6, :class => "box"
                   %tr
                     %td.footer-text{:colspan => "2"}
-                      = link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["your_collection_address_body"], :expand => "worth_body")
+                      = link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["location_body"], :expand => "worth_body")
                     %td{:align => "right", :colspan => "2"}
                       = link_to_remote image_tag("continue_button.jpg", :size => "285x36", :border => "0"), :url => {:action => "validate_quote"},
                       :with                                                                     => "Form.serialize($('new_quote'))" + " + '&quote[stage]=location'",
-                      :success                                                                  => shuffle(:contract => ["your_collection_address_body"], :expand => ["payment_body"])
+                      :success                                                                  => shuffle(:contract => ["location_body"], :expand => ["payment_body"])

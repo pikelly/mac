@@ -1,0 +1,52 @@
+= javascript('ga_loader')
+- form_for @quote do |f|
+  %table.banner-logo(align="center" width="811" cellspacing="0" cellpadding="0" border="0")
+    %tr
+      %td.banner-logo
+        Money<span style="color:red;">4</span>Macs.co.uk<br>
+        0117 939 5254
+  %table.four-border{:align => "center", :width => "811", :cellspacing => "0", :cellpadding => "0", :border => "0"}
+    %tr
+      %td.offer-text
+        In these tough financial times are you in need of<br>
+        some <span style="color:red; font-weight: bold;">EXTRA CASH?</span> If so we can help. <br>
+        Just fill in the form below and we will give you an<br>
+        <span style="color:red; font-weight: bold;">INSTANT </span>no obligation valuation of your Apple mac.<br>
+        You will have your valuation in a couple of minutes <br>
+        and the money could be in your account <br>
+        within a couple of days.<br>
+        <span style="line-height: 1.7"> If you accept our offer then -<br>
+        <span style="color:red">
+        &nbsp;&nbsp;&nbsp;1 - We will send our courier to collect your mac<br>
+        &nbsp;&nbsp;&nbsp;2 - We will thoroughly test your mac<br>
+        &nbsp;&nbsp;&nbsp;3 - We will pay you within 48 hours<br>
+        </span>
+        </span>
+        It's that simple - Click now.
+    - unless Pot.all.find{|p| p.remainder > p.cap}
+      = render "oversupply"
+    - else
+      %tr
+        %td.tab-bg
+          = render "quotes/components/your_mac", :f => f
+      %tr
+        %td.tab-bg
+          = render "quotes/components/location_body", :f => f
+      %tr
+        %td.tab-bg
+          = render "quotes/components/payment", :f => f
+      %tr
+        %td
+          .goodbye{:style => "display:none;"}
+            Thank you for your interest. We will be in touch soon.
+    %table.footer-text{:align => "center"}
+      %tr
+        %br/
+        %br/
+        %td{:align => :center, :valign => "top"}
+          %a.bottom-links-text{:href => "#", :style => "text-decoration:underline;", :onclick => "window.open('#{about_us_quotes_path}',            'about_us',            'width=720,height=894,scrollbars=yes')"}
+            About Us
+          &nbsp;
+          %a.bottom-links-text{:href => "#", :style => "text-decoration:underline;", :onclick => "window.open('#{terms_and_conditions_quotes_path}','terms_and_conditions','width=720,height=840,scrollbars=yes')"}
+            Terms and Conditions
+          &copy; 2013 money4macs.co.uk
