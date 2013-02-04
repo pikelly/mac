@@ -3,20 +3,20 @@
     %td.top
       %table.clean(width="801" cellpadding="0")
         %tr
-          %td.your-mac-is-worth{:colspan => "3", :align => "center"}
+          %td.your-mac-is-worth.center{:colspan => "3"}
             Your Mac Is Worth
         %tr
-          %td{:width => "38%", :align => "right"}
+          %td.right{:width => "38%"}
             = image_tag "pound.jpg"
-          %td.valuation.top#worth_value{:align => "left", :width => "%62"}
+          %td.valuation.top.left#worth_value{:width => "%62"}
             Nowt
         %tr
-          %td.your-mac-is-worth{:align => "center", :colspan => "3"}
+          %td.your-mac-is-worth.center{:colspan => "3"}
             Would you like to accept and continue?
       %table.clean(width="801" cellpadding="0")
         %tr
-          %td{:align => "left", :width => "50%"}
+          %td.left{:width => "50%"}
             = link_to_function(image_tag("back_long_button.jpg", :size => "287x38", :border => "0", :style => "margin-left: 20px;"), shuffle(:contract => ["worth_body"], :expand => "laptop_body"))
-          %td{:align => "right", :width => "50%"}
+          %td.right{:width => "50%"}
             = link_to_function(image_tag("continue_button.jpg", :size => "287x38", :border => "0", :style => "margin-right:20px;"), shuffle(:contract => ["worth_body"], :expand => "location_body"))
 

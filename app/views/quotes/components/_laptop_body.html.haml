@@ -8,19 +8,19 @@
           %td.what-else-text
             %strong What else is included?
         %tr
-          %td{:align => "center"}
+          %td.center
             = collection_select :quote, :computer_id, Computer.all, :id, :name, {}, {:class => "box-wide", :classname => "box-wide"}
             = observe_field :quote_computer_id, :url => {:action => :computer_changed}, :with => "'id=' + value"
         %tr
           %td{:width => "42%"}
             %table.clean(width="100%" cellpadding="0")
               %tr
-                %td{:align => "center", :width => "23%"}
-                %td{:align => "center", :width => "49%"}
-                  %div{:style => "text-align:center;"}= image_tag "#{@computer.image_name}.jpg", :id => "photo"
-                %td{:align => "center", :width => "28%"} &nbsp;
+                %td.center{:width => "23%"}
+                %td.center{:width => "49%"}
+                  %div.center= image_tag "#{@computer.image_name}.jpg", :id => "photo"
+                %td{:width => "28%"} &nbsp;
               %tr
-                %td.heading#computer_name{:align => "center", :colspan => "3"}= @computer.name
+                %td.heading.center#computer_name{:colspan => "3"}= @computer.name
           %td.top{:width => "58%"}
             %table.clean(align="center" width="95%" cellpadding="2")
               %tr
@@ -44,24 +44,24 @@
                   = f.check_box "manual"
                   User Manuals
               %tr
-                %td{:align => "left", :width => "50%"}
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  %a.grade-text{:onclick => "window.open('<%= grading_quotes_path -%>', 'grading_definitions', 'directories=0, toolbar=0, width=720,height=650,scrollbars=1')", :href => "#"}
-                    %span{:style => "text-decoration: underline;"}
+                %td.left{:width => "50%"}
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  %a.grade-text{:onclick => "window.open('#{grading_quotes_path}', 'grading_definitions', 'directories=0, toolbar=0, width=720,height=650,scrollbars=1')", :href => "#"}
+                    %span.underlined
                       About grading
                 %td.form-text.top
                   = f.check_box "mouse"
                   Mouse
               %tr
-                %td{:align => "left", :width => "50%"}
-                  %a.grade-text{:onclick => "window.open('<%= how_to_find_quotes_path -%>', 'How_to_find_this_information', 'directories=0, toolbar=0, width=838,height=820,scrollbars=1')", :href => "#"}
-                    %span{:style => "text-decoration: underline;"}
+                %td.left{:width => "50%"}
+                  %a.grade-text{:onclick => "window.open('#{how_to_find_quotes_path}', 'How_to_find_this_information', 'directories=0, toolbar=0, width=838,height=820,scrollbars=1')", :href => "#"}
+                    %span.underlined
                       How to find this information
                 %td.form-text.top
                   = f.check_box "keyboard"
                   Keyboard
               %tr
-                %td.form-text{:align => "right", :style => "padding-right:20px;", :colspan => "2"}
+                %td.form-text.right{:style => "padding-right:20px;", :colspan => "2"}
               %tr
                 %td.bottom
                   = link_to_function image_tag("glass-buttons-back-195.jpg", :border => "0"), shuffle(:contract => ["laptop_body"], :expand => "mac_body")

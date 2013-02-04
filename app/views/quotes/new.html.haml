@@ -24,7 +24,9 @@
         </span>
         It's that simple - Click now.
     - unless Pot.all.find{|p| p.remainder > p.cap}
-      = render "oversupply"
+      %tr
+        %td.oversupply-text
+          Money4Macs is not currently purchasing any more <%= object.name -%> machines due to over supply.
     - else
       %tr
         %td.tab-bg
@@ -43,10 +45,10 @@
       %tr
         %br/
         %br/
-        %td.top{:align => :center}
-          %a.bottom-links-text{:href => "#", :style => "text-decoration:underline;", :onclick => "window.open('#{about_us_quotes_path}',            'about_us',            'width=720,height=894,scrollbars=yes')"}
+        %td.top.center
+          %a.bottom-links-text.underlined{:href => "#", :onclick => "window.open('#{about_us_quotes_path}',            'about_us',            'width=720,height=894,scrollbars=yes')"}
             About Us
           &nbsp;
-          %a.bottom-links-text{:href => "#", :style => "text-decoration:underline;", :onclick => "window.open('#{terms_and_conditions_quotes_path}','terms_and_conditions','width=720,height=840,scrollbars=yes')"}
+          %a.bottom-links-text.underlined{:href => "#", :onclick => "window.open('#{terms_and_conditions_quotes_path}','terms_and_conditions','width=720,height=840,scrollbars=yes')"}
             Terms and Conditions
-          &copy; 2013 money4macs.co.uk
+          &copy;2013 money4macs.co.uk

@@ -285,3 +285,19 @@ table.clean {
 .shown{
  display: inline;
 }
+.center {
+ text-align: center;
+}
+.left {
+ text-align: left;
+}
+.right {
+ text-align: right;
+}
+.underlined {
+ text-decoration:underline;
+}
+
+/*td {*/
+    /*padding: 0px;*/
+/*}*/

@@ -4,10 +4,10 @@
       #mac_header.tab-text
         = link_to_function "1 - Details Of Your Mac " + "&nbsp; " * 42, shuffle(:expand =>["mac_body"], :contract => ["payment_body", "laptop_body", "desktop_body", "worth_body", "location_body", "payment_body"]),  {:class => "tab-text1"}
       #mac_body{:style => "display: none;"}
-        = render("mac_type", :f => f)
+        = render("quotes/components/mac_type", :f => f)
       #worth_body{:style => "display: none;"}
         = render("quotes/components/worth_body", :f => f)
       #desktop_body{:style => "display: none;"}
-        = render("desktop_body", :f => f)
+        = render("quotes/components/desktop_body", :f => f)
       #laptop_body{:style => "display: none;"}
         = render("quotes/components/laptop_body", :f => f)

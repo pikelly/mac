@@ -4,7 +4,7 @@
       #payment_header.tab-text
         3 - Your Money to You FAST
       #payment_body{:style => "display: none;"}
-        #div5{:style => "height:auto;", :align => "center"}
+        #div5.center{:style => "height:auto;"}
           %table.clean(width="805" cellpadding="0")
             %tr
               %td
@@ -21,7 +21,7 @@
                               %tr
                                 %td
                                   = f.text_area :comment, :class => "box-wide", :rows => 6
-                    %td.simple-text.top{:colspan => "3", :align => "left"}
+                    %td.simple-text.top.left{:colspan => "3"}
                       #macboxyes{:style => "display: none;"}
                         %p
                           Nearly there. To finish you just need to pick a date convenient for you in the calender on the left.
@@ -43,7 +43,7 @@
                       = f.check_box :confirmation
                       I confirm that the information I have provided, to the best of my knowledge, is accurate and true.
                   %tr
-                    %td.simple-text{:align => "left", :colspan => "3"}
+                    %td.simple-text.left{:colspan => "3"}
                       %p
                         %strong
                           Please note: We only issue payment by the following methods:<br/>
@@ -56,19 +56,19 @@
                   %tr
                     %td
                       &nbsp;
-                    %td.footer-text{:colspan => "3", :align => "left"}
+                    %td.footer-text.left{:colspan => "3"}
                       &nbsp;&nbsp;
                       = f.check_box :iagree, :tabindex => 9, :class => "footer-text"
                       I agree to the
-                      %a{:onclick => "window.open('#{terms_and_conditions_quotes_path}','terms_and_conditions','width=720,height=880,scrollbars=yes')", :href => "#", :style => "text-decoration: underline;"}
+                      %a.underlined{:onclick => "window.open('#{terms_and_conditions_quotes_path}','terms_and_conditions','width=720,height=880,scrollbars=yes')", :href => "#"}
                         Terms and Conditions
                       of this contract
           %table{:width => "801"}
             %tr
-              %td{:align => "left"}
+              %td.left
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 = link_to_function image_tag("back_long_button.jpg", :size => "285x36", :border => "0"), shuffle(:contract => ["payment_body"], :expand => "location_body")
-              %td{:align => "right"}
+              %td.right
                 = link_to_remote image_tag("i_accept_button.jpg", :size => "285x36", :border => "0"), :url => {:action => "submit_quote"},
                                                    :with                                                                     => "Form.serialize($('new_quote'))" + " + '&quote[stage]=payment'",
                                                    :success                                                                  => shuffle(:contract => ["payment_body"], :expand => "goodbye")
